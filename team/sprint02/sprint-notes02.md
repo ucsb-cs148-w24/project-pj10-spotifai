@@ -6,4 +6,5 @@ How will we do it?
 - We will solidify our tech stack and designate who will use which tech and how they will implement their tech into the product
 - We will get a more concrete idea of what our final product will look like such as how the user will interact and what we can add so that the user has the most satisfaction
 - Start getting our UI built up and organizing the visuals of our page
-- Add current tasks to the kanban board in the backlog so each member can start working on their assigned parts
+- Add current tasks to the kanban board in the backlog so each member can start working on their assigned parts (see scrum notes)
+- Each member will practice and get a better understanding of the respective technology they are using
