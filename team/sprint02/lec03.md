@@ -8,18 +8,27 @@ Attendance:
  - richard
 What everyone is up to:
    Sam: 
-   - Working on UI
+   - Working on UI main components
+   - More D3 
    Lindsey: 
-   - Working on UI
-   Ethan: 
-   - Working on UI
+   - Working on UI organization
+   - MongoDB
+   Ethan:
+   - Working on UI main display
+   - React practice
    Grace: 
-   - Making pages for each feature
+   - Making pages for playlist mood feature
+   - Spotify api
    Aaron: 
-   - Making pages for each feature
+   - Making pages for youtube integration
+   - React practice
    Kyle: 
-   - Making pages for each feature
+   - Making pages for AI cover art
+   - React practice
    Richard: 
-   - Making pages for each feature
+   - Making pages for other features
+   - Vercel 
 Future:
-- Everyone gets a kanban pannel to finished
+- Everyone gets a kanban panel to finished
+- Get better idea for how our UI will work
+- Start adding features
