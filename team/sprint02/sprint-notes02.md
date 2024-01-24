@@ -8,3 +8,8 @@ How will we do it?
 - Start getting our UI built up and organizing the visuals of our page
 - Add current tasks to the kanban board in the backlog so each member can start working on their assigned parts (see scrum notes)
 - Each member will practice and get a better understanding of the respective technology they are using
+
+User stories for this sprint
+- As a user I can use the application to generate playlist covers to personalize my spotify playlists.
+- As a user I can easily navigate the application to intuitively know where to go to get what I want.
+- As a user I can use the application to view song and demographic analytics based on my spotify account/playlists.
