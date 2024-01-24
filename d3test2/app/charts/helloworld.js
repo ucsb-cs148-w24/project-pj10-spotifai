@@ -1,61 +1,81 @@
-import * as d3 from "d3";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
+import * as d3 from 'd3';
 
-const HelloWorldChart = () => {
+const WorldMapChart = () => {
   const ref = useRef();
 
   useEffect(() => {
-    // set the dimensions and margins of the graph
-    const margin = { top: 30, right: 30, bottom: 70, left: 60 },
-      width = 460 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+    // The svg
+    var svg = d3.select(ref.current),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
 
-    // append the svg object to the body of the page
-    const svg = d3
-      .select(ref.current)
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+    // Map and projection
+    var projection = d3.geoMercator()
+      .scale(70)
+      .center([0,20])
+      .translate([width / 2, height / 2]);
 
-    // Parse the Data
-    d3.csv(
-      "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv"
-    ).then(function (data) {
-      // X axis
-      data.push({ Country: "Hello World", Value: 20000 })
-      const x = d3
-        .scaleBand()
-        .range([0, width])
-        .domain(data.map((d) => d.Country))
-        .padding(0.2);
-      svg
-        .append("g")
-        .attr("transform", `translate(0, ${height})`)
-        .call(d3.axisBottom(x))
-        .selectAll("text")
-        .attr("transform", "translate(-10,0)rotate(-45)")
-        .style("text-anchor", "end");
+    // Data and color scale
+    var colorScale = d3.scaleThreshold()
+      .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
+      .range(d3.schemeBlues[7]);
 
-      // Add Y axis
-      const y = d3.scaleLinear().domain([0, 13000]).range([height, 0]);
-      svg.append("g").call(d3.axisLeft(y));
+    // Load external data
+    Promise.all([
+      fetch("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(response => response.json()),
+      fetch("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv").then(response => response.text())
+    ]).then(function([topo, populationData]) {
+      let data = new Map();
+      let parsedCSV = d3.csvParse(populationData);
+      parsedCSV.forEach(d => {
+        data.set(d.code, +d.pop);
+      });
 
-      // Bars
-      svg
-        .selectAll("mybar")
-        .data(data)
-        .join("rect")
-        .attr("x", (d) => x(d.Country))
-        .attr("y", (d) => y(d.Value))
-        .attr("width", x.bandwidth())
-        .attr("height", (d) => height - y(d.Value))
-        .attr("fill", "#5f0f40");
+      // Mouseover and mouseleave functions
+      let mouseOver = function(d) {
+        d3.selectAll(".Country")
+          .transition()
+          .duration(200)
+          .style("opacity", .5)
+        d3.select(this)
+          .transition()
+          .duration(200)
+          .style("opacity", 1)
+          .style("stroke", "black")
+      }
+
+      let mouseLeave = async function(d) {
+        await d3.selectAll(".Country")
+          .transition()
+          .duration(20)
+          .style("opacity", .5);
+        await d3.select(this)
+          .transition()
+          .duration(20)
+          .style("stroke", "transparent")
+      }
+
+      // Draw the map
+      svg.append("g")
+        .selectAll("path")
+        .data(topo.features)
+        .enter()
+        .append("path")
+          .attr("d", d3.geoPath().projection(projection))
+          .attr("fill", function (d) {
+            d.total = data.get(d.id) || 0;
+            return colorScale(d.total);
+          })
+          .style("stroke", "transparent")
+          .attr("class", "Country")
+          .style("opacity", .8)
+          .on("mouseover", mouseOver)
+          .on("mouseleave", mouseLeave)
     });
   }, []);
 
-  return <svg width={460} height={400} id="helloworld" ref={ref} />;
+  return <svg width={800} height={450} ref={ref}></svg>;
 };
 
-export default HelloWorldChart;
+export default WorldMapChart;
