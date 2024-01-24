@@ -2,6 +2,10 @@
 
 | Date      | Name              | Activity                                               |
 |-----------|-------------------|--------------------------------------------------------|
-| Mon 10/04 | Chris Gaucho      | Led team discussion to define MVP                      | 
-| Tue 10/05 | Lauren del Playa  | Led team discussion of Sprint01 and learning plan      | 
-| Wed 10/13 | Taylor Chen       | Will lead first Retro                                  | 
+| Wed 01/17 | Sam               | Scrum master (lec02) / Sprint01 Planning               | 
+| Fri 01/19 | Kyle              | Scrum master (lab02)                                   | 
+| Mon 01/22 | Aaron             | Scrum master (lec03)                                   | 
+| Tue 01/23 | Kyle              | Sprint02 Planning                                      | 
+| Wed 01/24 | Ethan             | Scrum master (lec04)                                   |
+| Fri 01/26 | Richard           | Will lead first Retro                                  | 
+
