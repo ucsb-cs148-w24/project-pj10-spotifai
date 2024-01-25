@@ -37,23 +37,24 @@ const WorldMapChart = () => {
         d3.selectAll(".Country")
           .transition()
           .duration(200)
-          .style("opacity", .5)
+          .style("opacity", .5);
         d3.select(this)
           .transition()
           .duration(200)
           .style("opacity", 1)
-          .style("stroke", "black")
+          .style("stroke", "black");
+        alert(d.srcElement.__data__.properties.name + ": " + d.srcElement.__data__.total);
       }
 
-      let mouseLeave = async function(d) {
-        await d3.selectAll(".Country")
+      let mouseLeave = function(d) {
+        d3.selectAll(".Country")
           .transition()
           .duration(20)
-          .style("opacity", .5);
-        await d3.select(this)
+          .style("opacity", .8);
+        d3.select(this)
           .transition()
           .duration(20)
-          .style("stroke", "transparent")
+          .style("stroke", "transparent");
       }
 
       // Draw the map
