@@ -1,8 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
+import InfoBox from '../../components/InfoBox';
 
 const WorldMapChart = () => {
   const ref = useRef();
+  const [boxVis, setBoxVis] = React.useState(false);
+  const [boxText, setBoxText] = React.useState("filler");
+  const [position, setPosition] = React.useState({ x: 0, y: 0 });
+    const handleMouseMove = (event) => {
+        setPosition({ x: event.clientX, y: event.clientY });
+    };
 
   useEffect(() => {
     // The svg
@@ -43,7 +50,9 @@ const WorldMapChart = () => {
           .duration(200)
           .style("opacity", 1)
           .style("stroke", "black");
-        alert(d.srcElement.__data__.properties.name + ": " + d.srcElement.__data__.total);
+        setBoxVis(true);
+        setBoxText(d.srcElement.__data__.properties.name + ": " + d.srcElement.__data__.total);
+        // alert(d.srcElement.__data__.properties.name + ": " + d.srcElement.__data__.total);
       }
 
       let mouseLeave = function(d) {
@@ -55,6 +64,7 @@ const WorldMapChart = () => {
           .transition()
           .duration(20)
           .style("stroke", "transparent");
+        setBoxVis(false);
       }
 
       // Draw the map
@@ -71,12 +81,17 @@ const WorldMapChart = () => {
           .style("stroke", "transparent")
           .attr("class", "Country")
           .style("opacity", .8)
-          .on("mouseover", mouseOver)
+          .on("mouseenter", mouseOver)
           .on("mouseleave", mouseLeave)
     });
   }, []);
 
-  return <svg width={800} height={450} ref={ref}></svg>;
+  return(
+    <div onMouseMove={handleMouseMove}>
+      <svg width={800} height={450} ref={ref}></svg>
+      <InfoBox isVisible = {boxVis} infoText = {boxText} position = {position}/>
+    </div> 
+  );
 };
 
 export default WorldMapChart;
