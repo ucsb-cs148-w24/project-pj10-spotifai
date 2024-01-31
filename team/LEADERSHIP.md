@@ -12,3 +12,4 @@
 | Wed 01/31 | Sam               | Scrum master (lec06)                                   |
 | Wed 01/31 | Sam               | Participated in a _help channel                        |
 | Wed 01/31 | Ethan             | Participated in a _help channel                        |
+| Wed 01/31 | Aaron             | Participated in a _help channel                        |
