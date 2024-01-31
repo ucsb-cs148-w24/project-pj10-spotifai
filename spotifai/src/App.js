@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import PlaylistCoverButton from './components/covergenerator/playlistcoverbutton';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
               flexGrow: 1,
             }}
           >
-            {/* insert ai image component*/}
+            {<PlaylistCoverButton />}
           </div>
           <div
             style = {{
