@@ -9,5 +9,6 @@
 | Wed 01/24 | Ethan             | Scrum master (lec04)                                   |
 | Fri 01/26 | Richard           | Will lead first Retro                                  | 
 | Mon 01/29 | Lindsey           | Scrum master (lec05) / Sprint03 Planning               |
-| Wed 01/31 | Sam               | Scrum master (lec06)                        |
+| Wed 01/31 | Sam               | Scrum master (lec06)                                   |
 | Wed 01/31 | Sam               | Participated in a _help channel                        |
+| Wed 01/31 | Ethan             | Participated in a _help channel                        |
