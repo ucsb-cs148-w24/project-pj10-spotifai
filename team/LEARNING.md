@@ -18,3 +18,7 @@
 - Lindsey commits to figuring out how to display dummy data on d3.js during week 3 and week 4.
 - Richard commits to refreshing his memory of React through creating a Sidebar for our project during weeks 3 and 4.
 
+## Lab03 _help Questions
+- Sam asked a question related to React.
+- Aaron asked a question related to React.
+- Ethan shared a React guide/post.
