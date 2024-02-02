@@ -19,6 +19,6 @@
 - Richard commits to refreshing his memory of React through creating a Sidebar for our project during weeks 3 and 4.
 
 ## Lab03 _help Questions
-- Sam asked a question related to React.
-- Aaron asked a question related to React.
-- Ethan shared a React guide/post.
+- Sam asked a question related to React (what exactly does a useRef do?).
+- Aaron asked a question related to React (what is Redux and should we use it?).
+- Ethan shared an Intro to React guide/post.
