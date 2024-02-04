@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import WorldMapChart from './components/DemographicMap.jsx';
 import './App.css';
 
 function App() {
@@ -78,7 +79,7 @@ function App() {
                   flexGrow: 1,
                 }}
               >
-                {/* demographic component */}
+                <WorldMapChart/>
               </div>
             </div>
             <div
