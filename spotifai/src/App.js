@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import WorldMapChart from './components/DemographicMap.jsx';
 import './App.css';
 import PlaylistCoverButton from './components/covergenerator/playlistcoverbutton';
 
@@ -79,7 +80,7 @@ function App() {
                   flexGrow: 1,
                 }}
               >
-                {/* demographic component */}
+                <WorldMapChart/>
               </div>
             </div>
             <div
