@@ -9,6 +9,6 @@ async function generate_cover(prompt) {
         n: 1,
         size: "1024x1024",
       });
-      image_url = response.data.data[0].url;
+      const image_url = response.data.url;
       return image_url;
 }
