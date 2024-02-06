@@ -1,35 +1,37 @@
-import logo from './logo.svg';
-import WorldMapChart from './components/DemographicMap.jsx';
-import './App.css';
+import logo from "./logo.svg";
+import WorldMapChart from "./components/DemographicMap.jsx";
+import "./App.css";
+import PlaylistCoverGenerator from "./components/cover/PlaylistCover.js";
 
 function App() {
   return (
     <div className="App">
-      <div style = {{
-        display: 'flex',
-        height: '100vh',
-        width: '100vw',
-        flexDirection: 'column',
-      }}
+      <div
+        style={{
+          display: "flex",
+          height: "100vh",
+          width: "100vw",
+          flexDirection: "column",
+        }}
       >
         <div
-          style = {{
-            display: 'flex',
-            flexDirection: 'row',
+          style={{
+            display: "flex",
+            flexDirection: "row",
             flexGrow: 1,
           }}
         >
           <div
-            style = {{
-              backgroundColor: 'yellow',
+            style={{
+              backgroundColor: "yellow",
               flexGrow: 1,
             }}
           >
-            {/* insert ai image component*/}
+            {<PlaylistCoverGenerator />}
           </div>
           <div
-            style = {{
-              backgroundColor: 'green',
+            style={{
+              backgroundColor: "green",
               flexGrow: 2.5,
             }}
           >
@@ -37,61 +39,60 @@ function App() {
           </div>
         </div>
         <div
-          style = {{
+          style={{
             flexGrow: 4,
-            display: 'flex',
-            flexDirection: 'row',
+            display: "flex",
+            flexDirection: "row",
           }}
         >
           <div
-            style = {{
-              backgroundColor: 'green',
+            style={{
+              backgroundColor: "green",
               flexGrow: 1,
             }}
           >
             {/* playlist component */}
           </div>
           <div
-            style = {{
-              display: 'flex',
-              flexDirection: 'column',
+            style={{
+              display: "flex",
+              flexDirection: "column",
               flexGrow: 2.5,
             }}
           >
             <div
-              style = {{
+              style={{
                 flexGrow: 2,
-                display: 'flex',
-                flexDirection: 'row',
+                display: "flex",
+                flexDirection: "row",
               }}
             >
               <div
-                style = {{
-                  backgroundColor: 'blue',
+                style={{
+                  backgroundColor: "blue",
                   flexGrow: 2,
                 }}
               >
                 {/* current song component */}
               </div>
-              <div 
-                style = {{
-                  backgroundColor: 'purple',
+              <div
+                style={{
+                  backgroundColor: "purple",
                   flexGrow: 1,
                 }}
               >
-                <WorldMapChart/>
+                <WorldMapChart />
               </div>
             </div>
             <div
-              style = {{
-                backgroundColor: 'pink',
+              style={{
+                backgroundColor: "pink",
                 flexGrow: 1,
               }}
             >
               {/* lyric analysis component */}
             </div>
           </div>
-          
         </div>
       </div>
     </div>
@@ -99,4 +100,3 @@ function App() {
 }
 
 export default App;
-
