@@ -40,6 +40,7 @@ export default function Body({ headerbackground }) {
           track_number: track.track_number,
         })),
       };
+      console.log(response.data.tracks.items[0].track.id);
       dispatch({ type: reducerCases.SET_PLAYLIST, selectedPlaylist });
     };
     getInitialPlaylist();
@@ -57,7 +58,7 @@ export default function Body({ headerbackground }) {
       {
         context_uri,
         offset: {
-          position: track_number - 1,
+          position: 1,
         },
         position_ms: 0,
       },
@@ -86,7 +87,6 @@ export default function Body({ headerbackground }) {
     var seconds = ((ms % 60000) / 1000).toFixed(0);
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   };
-  console.log(selectedPlaylist.tracks)
   return (
     <Container headerBackground={headerbackground}>
       {selectedPlaylist && (
