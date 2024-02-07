@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import WorldMapChart from "./components/DemographicMap.jsx";
 import "./App.css";
 import PlaylistCoverGenerator from "./components/cover/PlaylistCover.js";
+import BeatVisualizer from "./components/beat_visualizer/BeatVisualizer.js";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             }}
           >
             {/* beat visualizer */}
+            {<BeatVisualizer />}
           </div>
         </div>
         <div
@@ -47,7 +49,7 @@ function App() {
         >
           <div
             style={{
-              backgroundColor: "green",
+              backgroundColor: "purple",
               flexGrow: 1,
             }}
           >
