@@ -31,7 +31,7 @@ export default function Playlists() {
   return (
     <Container>
       <ul>
-        {playlists.map(({ name, id }) => {
+        {playlists?.map(({ name, id }) => {
           return (
             <li key={id} onClick={() => changeCurrentPlaylist(id)}>
               {name}
