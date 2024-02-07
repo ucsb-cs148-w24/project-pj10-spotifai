@@ -109,7 +109,7 @@ function App() {
                 flexGrow: 1,
               }}
             >
-              {/* lyric analysis component */}
+              {<LyricAnalysis />}
             </div>
           </div>
         </div>
