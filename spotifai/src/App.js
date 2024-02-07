@@ -3,6 +3,7 @@ import WorldMapChart from "./components/DemographicMap.jsx";
 import "./App.css";
 import PlaylistCoverGenerator from "./components/cover/PlaylistCover.js";
 import BeatVisualizer from "./components/beat_visualizer/BeatVisualizer.js";
+import LyricAnalysis from "./components/lyric_analysis/LyricAnalysis.js";
 import React, { useEffect } from "react";
 import Login from "./components/Login.jsx";
 import { reducerCases } from "./utils/Constants.js";
