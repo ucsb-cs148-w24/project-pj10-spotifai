@@ -19,7 +19,7 @@ const WorldMapChart = () => {
 
     // Map and projection
     var projection = d3.geoMercator()
-      .scale(70)
+      .scale(40)
       .center([0,20])
       .translate([width / 2, height / 2]);
 
@@ -91,8 +91,8 @@ const WorldMapChart = () => {
     <>
       <div style = {{height: "100%", width: "100%", backgroundColor: "red", position: "relative"}} onMouseMove={handleMouseMove}>
         <svg
-          width = {500}
-          height = {400}
+          width = {250}
+          height = {200}
           style = {{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}
           ref={ref}
         >
