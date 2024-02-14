@@ -13,3 +13,4 @@
 | Wed 01/31 | Sam               | Participated in a _help channel                        |
 | Wed 01/31 | Ethan             | Participated in a _help channel                        |
 | Wed 01/31 | Aaron             | Participated in a _help channel                        |
+| Fri 02/16 | Aaron             | Will lead second Retro                                 |
