@@ -51,7 +51,8 @@ const PlaylistCoverGenerator = () => {
     );
 
     // Construct the DALL-E Prompt
-    let prompt = "";
+    let prompt =
+      "Create an abstract, visually striking playlist cover art that captures the essence of '";
     if (spoitfy_response.data.audio_features[0].danceability >= 0.5) {
       prompt += "groovy, ";
     }
@@ -73,7 +74,8 @@ const PlaylistCoverGenerator = () => {
     } else {
       prompt += "exhilarating ";
     }
-    prompt += "vibes";
+    prompt +=
+      "vibes' without using text, human figures, or traditional musical notes.";
 
     const openai = new OpenAI({
       apiKey: "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",
@@ -98,9 +100,7 @@ const PlaylistCoverGenerator = () => {
 
   const handleGenerateCover = async () => {
     setIsLoading(true);
-    const prompt =
-      "Create an abstract, visually striking playlist cover art that captures the essence of 'chill vibes' without using text, human figures, or traditional musical notes.";
-    const image = await generate_cover(prompt);
+    const image = await generate_cover();
     setCoverImage(image);
     setIsLoading(false);
   };
@@ -108,8 +108,8 @@ const PlaylistCoverGenerator = () => {
   const handleDownloadImage = () => {
     const element = document.createElement("a");
     element.setAttribute("href", coverImage);
-    element.setAttribute("target", "_blank");
-    // element.setAttribute("download", "playlist-cover.png");
+    //element.setAttribute("target", "_blank");
+    element.setAttribute("download", "playlist-cover.png");
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
