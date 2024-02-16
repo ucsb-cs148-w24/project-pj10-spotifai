@@ -108,8 +108,8 @@ const PlaylistCoverGenerator = () => {
   const handleDownloadImage = () => {
     const element = document.createElement("a");
     element.setAttribute("href", coverImage);
-    //element.setAttribute("target", "_blank");
-    element.setAttribute("download", "playlist-cover.png");
+    element.setAttribute("target", "_blank");
+    //element.setAttribute("download", "playlist-cover.png");
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
