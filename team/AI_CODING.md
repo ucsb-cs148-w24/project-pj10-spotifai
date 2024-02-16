@@ -1,6 +1,6 @@
 Coding with AI:
 
-Aaron: Using codeium
+Aaron: I used the Codeium extension in VSCode to enhance my coding productivity. By leveraging its autocomplete and suggestion features, I was able to streamline my coding process significantly. Codeium provided suggestions and completions while I was writing code, helping me write cleaner and more efficient code with fewer errors. Its assistance was particularly useful when writing testing code, as it helped me generate relevant snippets quickly. Additionally, I explored using Codeium for generating documentation, which proved very useful in documenting quickly.
 
 Samuel: I used GitHub Copilot. Copilot was incredibly useful because it allowed me to very quickly write boilerplate lines of code by repeatedly hitting tab and enter, and it was correct most of the time. The nice thing about Copilot is that you don't have to think about it— you can just see the suggestion automatically and reject it if it is not what you want. Very often, I used Copilot to navigate coding a program that I was not sure exactly was correct, and I could just run it and maybe adjust it accordingly until it worked.
 
