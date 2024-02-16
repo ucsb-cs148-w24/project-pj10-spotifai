@@ -24,7 +24,7 @@ const PlaylistCoverGenerator = () => {
   const [{ token, selectedPlaylist }, dispatch] = useStateProvider();
 
   async function generate_cover() {
-    let num_tracks = selectedPlaylist.tracks.len();
+    let num_tracks = selectedPlaylist.tracks.length;
     let spotify_prompt = selectedPlaylist.tracks[0].id;
 
     // Add selected tracks to spotify prompt
