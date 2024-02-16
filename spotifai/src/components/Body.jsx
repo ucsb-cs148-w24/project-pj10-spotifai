@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useStateProvider } from "../utils/StateProvider";
 import { AiFillClockCircle } from "react-icons/ai";
 import { reducerCases } from "../utils/Constants";
-import PlaylistCoverGenerator from "./cover/PlaylistCover.js";
+import PlaylistCoverGenerator from "./cover/PlaylistCover.jsx";
 import WorldMapChart from "./DemographicMap.jsx";
 
 export default function Body({ headerbackground }) {

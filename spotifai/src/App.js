@@ -1,6 +1,6 @@
 import WorldMapChart from "./components/DemographicMap.jsx";
 import "./App.css";
-import PlaylistCoverGenerator from "./components/cover/PlaylistCover.js";
+import PlaylistCoverGenerator from "./components/cover/PlaylistCover.jsx";
 import BeatVisualizer from "./components/beat_visualizer/BeatVisualizer.js";
 import LyricAnalysis from "./components/lyric_analysis/LyricAnalysis.js";
 import React, { useEffect } from "react";
