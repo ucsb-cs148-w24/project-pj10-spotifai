@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import CurrentTrack from "./CurrTrack";
-import BeatVisualizer from "./beat_visualizer/BeatVisualizer.js";
+// import BeatVisualizer from "./beat_visualizer/BeatVisualizer.js";
+import Kaleidoscope from "./beat_visualizer/Kaleidoscope.js";
 import PlayerControls from "./PlayerControls";
 import Volume from "./Volume";
+
 export default function Footer() {
   return (
     <Container>
-      <BeatVisualizer />
+      {/* <BeatVisualizer /> */}
+      <Kaleidoscope />
       <CurrentTrack />
       <PlayerControls />
       <Volume />
