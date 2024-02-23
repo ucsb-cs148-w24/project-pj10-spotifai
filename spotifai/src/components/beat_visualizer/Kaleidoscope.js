@@ -29,7 +29,6 @@ export default function Kaleidoscope() {
           confidence: beat.confidence,
         }));
 
-        // Fetch currently playing track details
         const responseCurrentlyPlaying = await axios.get(
           "https://api.spotify.com/v1/me/player/currently-playing",
           {
@@ -44,12 +43,10 @@ export default function Kaleidoscope() {
 
         dispatch({ type: reducerCases.SET_BEATS, beats });
 
-        // Print beats array and progress_ms to console
         console.log("Beats array:", beats);
         console.log("Progress in milliseconds:", progressMs);
 
-        // Call the function to handle the animation
-        handleColorChangeAnimation(beats, progressMs);
+        changeColor(beats, progressMs);
       } catch (error) {
         console.error("Error fetching audio analysis or currently playing track:", error);
       }
@@ -58,9 +55,9 @@ export default function Kaleidoscope() {
     getCurrentTrack();
   }, [token, currentPlaying, dispatch]);
 
-  const handleColorChangeAnimation = (beats, progressMs) => {
+  const changeColor = (beats, progressMs) => {
 
-    // Function to generate a random color
+    // generate a random color
     const getRandomColor = () => {
       const letters = '0123456789ABCDEF';
       let color = '#';
@@ -70,7 +67,7 @@ export default function Kaleidoscope() {
       return color;
     };
 
-    // Find the index of the first beat after the current progress
+    // find index of first beat after current song position
     let currentBeatIndex = 0;
     while (
       currentBeatIndex < beats.length &&
@@ -80,27 +77,27 @@ export default function Kaleidoscope() {
     }
     console.log(currentBeatIndex);
 
-    // If there are beats remaining after the progress, initiate the animation
+    // if there are beats remaining after current song position, initiate animation
     if (currentBeatIndex < beats.length) {
       const circleElement = document.querySelector(".color-changing-circle");
   
-      // Create an animation timeline with anime.js
+      // animation timeline
       const timeline = anime.timeline({
         easing: "linear",
         autoplay: true
       });
   
-      // Iterate through beats starting from the currentBeatIndex
+      // iterate through remaining beats in song
       for (let i = currentBeatIndex; i < beats.length; i++) {
         const beat = beats[i];
         console.log(beat.duration)
   
-        // Add color change animation to the timeline
+        // populate timeline
         timeline.add({
           targets: circleElement,
-          backgroundColor: getRandomColor, // Change this to the desired color
-          duration: beat.duration * 1000, // Convert beat duration to milliseconds
-          offset: beat.start * 1000 - progressMs, // Offset the animation based on progress
+          backgroundColor: getRandomColor,
+          duration: beat.duration * 1000,
+          offset: beat.start * 1000 - progressMs,
         });
       }
     }
