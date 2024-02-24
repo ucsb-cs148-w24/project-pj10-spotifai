@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import CurrentTrack from "./CurrTrack";
-// import BeatVisualizer from "./beat_visualizer/BeatVisualizer.js";
 import Kaleidoscope from "./beat_visualizer/Kaleidoscope.js";
 import PlayerControls from "./PlayerControls";
 import Volume from "./Volume";
@@ -9,7 +8,6 @@ import Volume from "./Volume";
 export default function Footer() {
   return (
     <Container>
-      {/* <BeatVisualizer /> */}
       <Kaleidoscope />
       <CurrentTrack />
       <PlayerControls />
@@ -19,13 +17,12 @@ export default function Footer() {
 }
 
 const Container = styled.div`
-  height: 100%;
+  height: auto; /* Adjust the height as needed */
   width: 100%;
   background-color: #181818;
   border-top: 1px solid #282828;
-  display: grid;
-  grid-template-columns: 0.5fr 0.5fr 2fr 1fr;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Align items vertically */
+  overflow: hidden; /* Ensure child elements do not overflow */
 `;

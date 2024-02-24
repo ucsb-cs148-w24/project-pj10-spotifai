@@ -12,7 +12,6 @@ export default function Kaleidoscope() {
       if (!currentPlaying) return;
 
       try {
-        // Fetch audio analysis
         const responseAnalysis = await axios.get(
           `https://api.spotify.com/v1/audio-analysis/${currentPlaying.id}`,
           {
@@ -56,8 +55,6 @@ export default function Kaleidoscope() {
   }, [token, currentPlaying, dispatch]);
 
   const changeColor = (beats, progressMs) => {
-
-    // generate a random color
     const getRandomColor = () => {
       const letters = '0123456789ABCDEF';
       let color = '#';
@@ -67,7 +64,6 @@ export default function Kaleidoscope() {
       return color;
     };
 
-    // find index of first beat after current song position
     let currentBeatIndex = 0;
     while (
       currentBeatIndex < beats.length &&
@@ -77,25 +73,21 @@ export default function Kaleidoscope() {
     }
     console.log(currentBeatIndex);
 
-    // if there are beats remaining after current song position, initiate animation
     if (currentBeatIndex < beats.length) {
       const circleElement = document.querySelector(".color-changing-circle");
-  
-      // animation timeline
+
       const timeline = anime.timeline({
         easing: "linear",
-        autoplay: true
+        autoplay: true,
       });
-  
-      // iterate through remaining beats in song
+
       for (let i = currentBeatIndex; i < beats.length; i++) {
         const beat = beats[i];
-        console.log(beat.duration)
-  
-        // populate timeline
+
         timeline.add({
           targets: circleElement,
           backgroundColor: getRandomColor,
+          scale: [1, 1.2, 1], // Add pulsation effect
           duration: beat.duration * 1000,
           offset: beat.start * 1000 - progressMs,
         });
