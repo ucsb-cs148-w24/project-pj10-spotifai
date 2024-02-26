@@ -13,4 +13,9 @@
 | Wed 01/31 | Sam               | Participated in a _help channel                        |
 | Wed 01/31 | Ethan             | Participated in a _help channel                        |
 | Wed 01/31 | Aaron             | Participated in a _help channel                        |
+| Mon 02/05 | Grace             | Scrum master (lec07)                                   |
+| Wed 02/07 | Lindsey           | Scrum master (lec08)                                   |
 | Fri 02/16 | Aaron             | Lead second retro                                      |
+| Mon 02/19 | Grace             | Scrum master (lec09)                                   |
+| Wed 02/21 | Sam               | Scrum master (lec10)                                   |
+| Mon 02/26 | Sam               | Scrum master (lec11)                                   |
