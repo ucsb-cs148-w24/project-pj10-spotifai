@@ -18,70 +18,65 @@ export const PlaylistCoverButton = ({ onGenerateCover, isLoading }) => {
 };
 
 const PlaylistCoverGenerator = () => {
+
   const [coverImage, setCoverImage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const [{ token, selectedPlaylist }, dispatch] = useStateProvider();
-
-  async function generate_cover() {
-    let num_tracks = selectedPlaylist.tracks.length;
-    let spotify_prompt = selectedPlaylist.tracks[0].id;
-
-    // Add selected tracks to spotify prompt
-    if (num_tracks <= 10) {
-      for (let i = 1; i < num_tracks; i++) {
-        spotify_prompt += "," + selectedPlaylist.tracks[i].id;
-      }
-    } else {
-      for (let i = 1; i < 10; i++) {
-        let ind = Math.floor(Math.random() * (num_tracks - 1));
-        spotify_prompt += "," + selectedPlaylist.tracks[ind].id;
-      }
-    }
-
-    // Get response for track features from spotify
-    const spoitfy_response = await axios.get(
-      `https://api.spotify.com/v1/audio-features?ids=${spotify_prompt}`,
-      {
+  async function fetchArtistGenres(artistId) {
+    try {
+      const response = await axios.get(`https://api.spotify.com/v1/artists/${artistId}`, {
         headers: {
-          Authorization: "Bearer " + token,
+          Authorization: "Bearer" + token,
           "Content-Type": "application/json",
         },
+      });
+      return response.data.genres; // Returns an array of genres
+    } catch (error) {
+      console.error("Error fetching artist genres:", error);
+      return []; // Return an empty array in case of error
+    }
+  }
+
+  async function generate_cover() {
+    setIsLoading(true);
+  
+    const numTracks = selectedPlaylist.tracks.length;
+    let selectedTracks = [];
+  
+    // Select all tracks if there are 10 or fewer
+    if (numTracks <= 10) {
+      selectedTracks = selectedPlaylist.tracks;
+    } else {
+      // If more than 10 tracks, select 10 random tracks
+      while (selectedTracks.length < 10) {
+        const randomIndex = Math.floor(Math.random() * numTracks);
+        const track = selectedPlaylist.tracks[randomIndex];
+        if (!selectedTracks.includes(track)) {
+          selectedTracks.push(track);
+        }
       }
-    );
+    }
+  
+    let genresSet = new Set();
+  
+    for (let track of selectedTracks) {
+      let artistId = track.artists[0].id; // Assuming there's at least one artist per track
+      let genres = await fetchArtistGenres(artistId);
+      genres.forEach(genre => genresSet.add(genre));
+    }
+  
+    let genresArray = Array.from(genresSet);
+    console.log("Collected Genres:", genresArray.join(", "));
 
-    // Construct the DALL-E Prompt
-    let prompt =
-      "Create an abstract, visually striking playlist cover art that captures the essence of '";
-    if (spoitfy_response.data.audio_features[0].danceability >= 0.5) {
-      prompt += "groovy, ";
-    }
-    if (spoitfy_response.data.audio_features[0].energy <= 0.25) {
-      prompt += "calm, ";
-    } else if (spoitfy_response.data.audio_features[0].energy <= 0.5) {
-      prompt += "mellow, ";
-    } else if (spoitfy_response.data.audio_features[0].energy <= 0.75) {
-      prompt += "upbeat, ";
-    } else {
-      prompt += "exciting, ";
-    }
-    if (spoitfy_response.data.audio_features[0].valence <= 0.25) {
-      prompt += "depressing ";
-    } else if (spoitfy_response.data.audio_features[0].valence <= 0.5) {
-      prompt += "sad ";
-    } else if (spoitfy_response.data.audio_features[0].valence <= 0.75) {
-      prompt += "happy ";
-    } else {
-      prompt += "exhilarating ";
-    }
-    prompt +=
-      "vibes' without using text, human figures, or traditional musical notes.";
-
+    let genresString = genresArray.join(", ");
+    let prompt = `Create an abstract, visually striking cover art that captures the essence of "${genresString} vibes" using a few colors and without the use of any text.`;
+  
     const openai = new OpenAI({
       apiKey: "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",
       dangerouslyAllowBrowser: true,
     });
-
+  
     try {
       const response = await openai.images.generate({
         model: "dall-e-3",
@@ -91,17 +86,18 @@ const PlaylistCoverGenerator = () => {
       });
       const image_url = response.data[0].url;
       console.log(image_url);
-      return image_url;
+      setCoverImage(image_url);
     } catch (error) {
       console.error("Error generating cover:", error);
-      return null;
+    } finally {
+      setIsLoading(false);
     }
   }
+  
 
   const handleGenerateCover = async () => {
     setIsLoading(true);
-    const image = await generate_cover();
-    setCoverImage(image);
+    await generate_cover();
     setIsLoading(false);
   };
 
@@ -109,11 +105,11 @@ const PlaylistCoverGenerator = () => {
     const element = document.createElement("a");
     element.setAttribute("href", coverImage);
     element.setAttribute("target", "_blank");
-    //element.setAttribute("download", "playlist-cover.png");
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
   };
+
   return (
     <div className={styles.coverGenerator}>
       {coverImage && (
