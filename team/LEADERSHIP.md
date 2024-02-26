@@ -21,10 +21,10 @@
 | Mon 02/26 | Sam               | Scrum master (lec11)                                   |
 
 # Future Leadership Roles
-Aaron Drumm: Retro 3 Leader
-Richard Fang: Testing/QA Coordinator
-Grace Feng: UX Coordinator, User Manual Coordinator
-Ethan Solomon: Scrum Master
-Kyle Uwaine: Deployment Document Coordinator
-Lindsey Wen: Product Owner, Final Presentation Leader
-Samuel Zhu: Design Document Coordinator
+- **Aaron Drumm:** Retro 3 Leader
+- **Richard Fang:** Testing/QA Coordinator
+- **Grace Feng:** UX Coordinator, User Manual Coordinator
+- **Ethan Solomon:** Scrum Master
+- **Kyle Uwaine:** Deployment Document Coordinator
+- **Lindsey Wen:** Product Owner, Final Presentation Leader
+- **Samuel Zhu:** Design Document Coordinator
