@@ -13,7 +13,6 @@ export const PlaylistCoverButton = ({ onGenerateCover }) => {
 
 const PlaylistCoverGenerator = () => {
   const [coverImage, setCoverImage] = useState("");
-
   const handleGenerateCover = async () => {
     const prompt = "happy vibes";
     const image = await generate_cover(prompt);
