@@ -9,9 +9,10 @@ import Login from "./components/Login.jsx";
 import { reducerCases } from "./utils/Constants.js";
 import { useStateProvider } from "./utils/StateProvider.jsx";
 import Spotify from "./components/SpotifyPage.jsx";
-
+// import googleTrends from "./components/d3_info/d3googleTrends.js";
 
 function App() {
+  // console.log(googleTrends());
   const [{ token }, dispatch] = useStateProvider();
   useEffect(() => {
     const hash = window.location.hash;

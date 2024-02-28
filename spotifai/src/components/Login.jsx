@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
+import GoogleTrends from "./d3_info/googleTrendstest.js";
 
 export default function Login() {
     const handleClick = async () => {
-        const clientID = "de12e2664c344d39a4d316e77cf7e74d";
+        const clientID = "7ea7076d9869431da11425c920134146";
         const redirectUrl = "http://localhost:3000/";
         const apiUrl = "https://accounts.spotify.com/authorize"
         const scope = [
@@ -22,6 +23,18 @@ export default function Login() {
     return <Container>
         <img src="" alt="" />
         <button onClick={handleClick}>Connect Spotify</button>
+        <div id="widget">
+            {/* <GoogleTrends
+            type="TIMESERIES"
+            keyword="Celine Dion"
+            url="https://ssl.gstatic.com/trends_nrtr/2051_RC11/embed_loader.js"
+            /> */}
+            <GoogleTrends
+            type="GEO_MAP"
+            keyword="Celine Dion"
+            url="https://ssl.gstatic.com/trends_nrtr/2051_RC11/embed_loader.js"
+            />
+        </div>
     </Container>
 }
 

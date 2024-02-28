@@ -1,4 +1,3 @@
-
 export default function YoutubeLinkButton(props) {
     const query = props.query;
     const key = props.api_key;
