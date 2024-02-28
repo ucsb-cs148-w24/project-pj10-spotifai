@@ -61,7 +61,7 @@ export default function Body({ headerbackground }) {
       {
         context_uri,
         offset: {
-          position: 1,
+          position: track_number - 1,
         },
         position_ms: 0,
       },
