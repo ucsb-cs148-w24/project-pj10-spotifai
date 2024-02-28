@@ -7,7 +7,7 @@
 | Mon 01/22 | Aaron             | Scrum master (lec03)                                   | 
 | Tue 01/23 | Kyle              | Sprint02 Planning                                      | 
 | Wed 01/24 | Ethan             | Scrum master (lec04)                                   |
-| Fri 01/26 | Richard           | Will lead first Retro                                  | 
+| Fri 01/26 | Richard           | Lead first Retro                                       | 
 | Mon 01/29 | Lindsey           | Scrum master (lec05) / Sprint03 Planning               |
 | Wed 01/31 | Sam               | Scrum master (lec06)                                   |
 | Wed 01/31 | Sam               | Participated in a _help channel                        |
@@ -19,6 +19,7 @@
 | Mon 02/19 | Grace             | Scrum master (lec09)                                   |
 | Wed 02/21 | Sam               | Scrum master (lec10)                                   |
 | Mon 02/26 | Sam               | Scrum master (lec11)                                   |
+| Wed 02/28 | Ethan             | Scrum master (lec12)                                   |
 
 # Future Leadership Roles
 - **Aaron Drumm:** Retro 3 Leader
