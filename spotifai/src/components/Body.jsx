@@ -61,7 +61,7 @@ export default function Body({ headerbackground }) {
       {
         context_uri,
         offset: {
-          position: 1,
+          position: track_number - 1,
         },
         position_ms: 0,
       },
@@ -96,7 +96,7 @@ export default function Body({ headerbackground }) {
         <>
           <div className="playlist">
             <div className="cover">
-              <PlaylistCoverGenerator/>
+              <PlaylistCoverGenerator />
             </div>
             <div className="details">
               <span className="type">PLAYLIST</span>
@@ -104,7 +104,10 @@ export default function Body({ headerbackground }) {
               <p className="description">{selectedPlaylist.description}</p>
             </div>
             <div>
-              <YoutubeLinkButton query = {currQuery} api_key = {"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"} />
+              <YoutubeLinkButton
+                query={currQuery}
+                api_key={"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"}
+              />
             </div>
             <div className="dem-map">
               <WorldMapChart />
