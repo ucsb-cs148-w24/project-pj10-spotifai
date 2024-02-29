@@ -23,20 +23,6 @@ const PlaylistCoverGenerator = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [{ token, selectedPlaylist }, dispatch] = useStateProvider();
-  async function fetchArtistGenres(artistId) {
-    try {
-      const response = await axios.get(`https://api.spotify.com/v1/artists/${artistId}`, {
-        headers: {
-          Authorization: "Bearer" + token,
-          "Content-Type": "application/json",
-        },
-      });
-      return response.data.genres; // Returns an array of genres
-    } catch (error) {
-      console.error("Error fetching artist genres:", error);
-      return []; // Return an empty array in case of error
-    }
-  }
 
   async function generate_cover() {
     setIsLoading(true);
@@ -45,11 +31,11 @@ const PlaylistCoverGenerator = () => {
     let selectedTracks = [];
   
     // Select all tracks if there are 10 or fewer
-    if (numTracks <= 10) {
+    if (numTracks <= 5) {
       selectedTracks = selectedPlaylist.tracks;
     } else {
       // If more than 10 tracks, select 10 random tracks
-      while (selectedTracks.length < 10) {
+      while (selectedTracks.length < 6) {
         const randomIndex = Math.floor(Math.random() * numTracks);
         const track = selectedPlaylist.tracks[randomIndex];
         if (!selectedTracks.includes(track)) {
@@ -58,19 +44,21 @@ const PlaylistCoverGenerator = () => {
       }
     }
   
-    let genresSet = new Set();
+    let artistsSet = new Set();
+
   
     for (let track of selectedTracks) {
-      let artistId = track.artists[0].id; // Assuming there's at least one artist per track
-      let genres = await fetchArtistGenres(artistId);
-      genres.forEach(genre => genresSet.add(genre));
+      console.log("track:", track);
+      console.log("duration:", track.duration);
+      let artist = track.artists[0]; // Assuming there's at least one artist per track
+      artistsSet.add(artist);
     }
-  
-    let genresArray = Array.from(genresSet);
-    console.log("Collected Genres:", genresArray.join(", "));
+    
+    let artistsArray = Array.from(artistsSet);
+    console.log("Collected Artists:", artistsArray.join(", "));
 
-    let genresString = genresArray.join(", ");
-    let prompt = `Create an abstract, visually striking cover art that captures the essence of "${genresString} vibes" using a few colors and without the use of any text.`;
+    let artistsString = artistsArray.join(", ");
+    let prompt = `Create one simple, clean, basic, piece of visually appealing art that captures the vibes of the songs created by these artists: ${artistsString}, with the use of only a few colors.`;
   
     const openai = new OpenAI({
       apiKey: "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",
