@@ -30,10 +30,11 @@ export default function Volume() {
 const Container = styled.div`
   display: flex;
   justify-content: flex-end;
-  align-content: center;
+  align-items: center;
+  
   input {
-    width: 15rem;
-    border-radius: 2rem;
-    height: 0.5rem;
+    width: 10rem; /* Adjust the width as needed */
+    border-radius: 1rem; /* Adjust the border-radius as needed */
+    height: 1.5rem; /* Adjust the height as needed */
   }
 `;

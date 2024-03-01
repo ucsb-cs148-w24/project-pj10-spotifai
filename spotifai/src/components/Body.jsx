@@ -1,15 +1,17 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useStateProvider } from "../utils/StateProvider";
 import { AiFillClockCircle } from "react-icons/ai";
 import { reducerCases } from "../utils/Constants";
-import PlaylistCoverGenerator from "./cover/PlaylistCover.js";
+import PlaylistCoverGenerator from "./cover/PlaylistCover.jsx";
 import WorldMapChart from "./DemographicMap.jsx";
+import YoutubeLinkButton from "./YoutubeLinkButton.jsx";
 
 export default function Body({ headerbackground }) {
   const [{ token, selectedPlaylist, selectedPlaylistId }, dispatch] =
     useStateProvider();
+  const [currQuery, setQuery] = useState("");
 
   useEffect(() => {
     const getInitialPlaylist = async () => {
@@ -53,6 +55,7 @@ export default function Body({ headerbackground }) {
     context_uri,
     track_number
   ) => {
+    setQuery(name + " " + artists[0]);
     const response = await axios.put(
       `https://api.spotify.com/v1/me/player/play`,
       {
@@ -99,6 +102,9 @@ export default function Body({ headerbackground }) {
               <span className="type">PLAYLIST</span>
               <h1 className="title">{selectedPlaylist.name}</h1>
               <p className="description">{selectedPlaylist.description}</p>
+            </div>
+            <div>
+              <YoutubeLinkButton query = {currQuery} api_key = {"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"} />
             </div>
             <div className="dem-map">
               <WorldMapChart />
