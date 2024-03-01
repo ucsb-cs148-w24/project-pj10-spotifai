@@ -58,7 +58,7 @@ const PlaylistCoverGenerator = () => {
     console.log("Collected Artists:", artistsArray.join(", "));
 
     let artistsString = artistsArray.join(", ");
-    let prompt = `Create one simple, clean, basic, piece of visually appealing art that captures the vibes of the songs created by these artists: ${artistsString}, with the use of only a few colors.`;
+    let prompt = `Create a basic and simple and soft art that captures the genres of these artists: ${artistsString}, with the use of only a few colors. Do not include music notes or any musical symbols and not too many details.`;
   
     const openai = new OpenAI({
       apiKey: "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",
