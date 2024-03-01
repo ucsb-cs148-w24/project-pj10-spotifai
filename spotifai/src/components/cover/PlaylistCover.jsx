@@ -30,11 +30,9 @@ const PlaylistCoverGenerator = () => {
     const numTracks = selectedPlaylist.tracks.length;
     let selectedTracks = [];
   
-    // Select all tracks if there are 10 or fewer
-    if (numTracks <= 5) {
+    if (numTracks < 6 ) {
       selectedTracks = selectedPlaylist.tracks;
     } else {
-      // If more than 10 tracks, select 10 random tracks
       while (selectedTracks.length < 6) {
         const randomIndex = Math.floor(Math.random() * numTracks);
         const track = selectedPlaylist.tracks[randomIndex];
@@ -50,7 +48,7 @@ const PlaylistCoverGenerator = () => {
     for (let track of selectedTracks) {
       console.log("track:", track);
       console.log("duration:", track.duration);
-      let artist = track.artists[0]; // Assuming there's at least one artist per track
+      let artist = track.artists[0]; 
       artistsSet.add(artist);
     }
     
