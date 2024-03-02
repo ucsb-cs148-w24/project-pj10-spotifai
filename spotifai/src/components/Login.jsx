@@ -26,13 +26,13 @@ export default function Login() {
 }
 
 const Container = styled.div`
-    background-color: black; /* Set the background to black */
-    height: 100vh; /* Make sure it covers the full viewport height */
-    width: 100vw; /* Cover the full viewport width */
+    background-color: black; 
+    height: 100vh; 
+    width: 100vw; 
     display: flex;
-    justify-content: center; /* Center children horizontally */
-    align-items: center; /* Center children vertically */
-    flex-direction: column; /* Stack children vertically */
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
 `;
 
 const StyledButton = styled.button`
@@ -45,6 +45,6 @@ const StyledButton = styled.button`
     font-size: 25px;
     margin-top: 10px;
     &:hover {
-    background-color: #004d00; /* Darken the button on hover */
+        background-color: #004d00; 
     }
 `;
