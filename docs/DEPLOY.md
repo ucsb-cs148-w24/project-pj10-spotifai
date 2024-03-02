@@ -1,6 +1,6 @@
 **Directory Guide**
--node_modules: contains the node modules used in this project
--spotifai: contains the sourcecode and application file for the project
+- node_modules: contains the node modules used in this project
+- spotifai: contains the sourcecode and application file for the project
   - public: contains public data used for the project, such as logos and images
   - src: contains sourcecode for the project
     - components: contains different component files used in project
