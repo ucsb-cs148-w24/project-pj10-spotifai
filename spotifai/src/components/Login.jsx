@@ -21,8 +21,30 @@ export default function Login() {
     };
     return <Container>
         <img src="" alt="" />
-        <button onClick={handleClick}>Connect Spotify</button>
+        <StyledButton onClick={handleClick}>Connect Spotify</StyledButton>
     </Container>
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+    background-color: black; /* Set the background to black */
+    height: 100vh; /* Make sure it covers the full viewport height */
+    width: 100vw; /* Cover the full viewport width */
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    flex-direction: column; /* Stack children vertically */
+`;
+
+const StyledButton = styled.button`
+    background-color: rgb(60, 97, 60);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: 10px;
+    &:hover {
+    background-color: #004d00; /* Darken the button on hover */
+    }
+`;
