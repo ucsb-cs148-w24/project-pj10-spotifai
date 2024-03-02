@@ -11,7 +11,7 @@
     - utils: contains utility files used throughout the project
 
 **Deployment Instructions**
-Since, there are limitations to being able to globally deploy the app due to SpotifyAPI restrictions, currently only local deployment is possible.
+-Since, there are limitations to being able to globally deploy the app due to SpotifyAPI restrictions, currently only local deployment is possible.
 Instructions for local deployment:
 1. Log into the spotify developer's dashboard and acquire your client ID to be used in the program.
 2. Enter this client ID into Login.jsx
