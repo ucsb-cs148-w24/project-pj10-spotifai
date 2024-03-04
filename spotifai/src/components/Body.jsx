@@ -169,7 +169,7 @@ export default function Body({ headerbackground }) {
                         </div>
                         <div className="info">
                           <span className="name">{name}</span>
-                          <span>{artists}</span>
+                          <span>{Array.isArray(artists) ? artists.join(', ') : artists}</span>
                         </div>
                       </div>
                       <div className="col">
@@ -210,7 +210,7 @@ const Container = styled.div`
       align-self: center;
       margin-top: 10px;
       margin-left: 250px;
-      padding-right: 8rem;
+      padding-right: 10rem;
     }
   }
   .list {
