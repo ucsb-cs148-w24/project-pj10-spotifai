@@ -15,10 +15,6 @@ export default function Footer() {
         <CurrentTrack />
         <PlayerControls />
         <Volume />
-        <YoutubeLinkButton
-          query={currQuery}
-          api_key={"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"}
-        />
         <KaleidoscopeWrapper>
           <Kaleidoscope />
         </KaleidoscopeWrapper>

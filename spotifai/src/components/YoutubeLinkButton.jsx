@@ -13,8 +13,9 @@ export default function YoutubeLinkButton(props) {
         window.open(`https://www.youtube.com/watch?v=${youtubeURL}`, "_blank");
     };
     return (
-        <button onClick={handleClick}>
-            <FontAwesomeIcon icon={faYoutube} /> {/* YouTube icon */}
+        <button onClick={handleClick} style={{ backgroundColor: 'rgb(60, 97, 60)', color: 'white', fontSize: '16px', padding: '10px 20px', borderRadius: '20px', border: 'none', cursor: 'pointer' }}>
+            Open Song in Youtube
+            <FontAwesomeIcon icon={faYoutube} />
         </button>
     );
 }
