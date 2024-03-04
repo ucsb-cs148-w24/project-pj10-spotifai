@@ -41,5 +41,5 @@ const ContentContainer = styled.div`
 `;
 
 const KaleidoscopeWrapper = styled.div`
-  padding-right: 2rem;
+  padding-right: 3rem;
 `;
