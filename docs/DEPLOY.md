@@ -16,4 +16,4 @@
 
 1. The user should send our team the email that is linked with their spotify account
 2. Open Spotify either on your desktop or your phone (Play a song for a second to notify the API that your aren't afk)
-4. Go to the release link (project-pj10-spotifai.vercel.app) and log in with your email
+4. Go to the release link (https://project-pj10-spotifai.vercel.app/) and log in with your email
