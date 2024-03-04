@@ -45,7 +45,7 @@ export default function Kaleidoscope() {
         console.log("Beats array:", beats);
         console.log("Progress in milliseconds:", progressMs);
 
-        changeColor(beats, progressMs);
+        animate(beats, progressMs);
       } catch (error) {
         console.error("Error fetching audio analysis or currently playing track:", error);
       }
@@ -54,7 +54,7 @@ export default function Kaleidoscope() {
     getCurrentTrack();
   }, [token, currentPlaying, dispatch]);
 
-  const changeColor = (beats, progressMs) => {
+  const animate = (beats, progressMs) => {
     const getRandomColor = () => {
       const letters = '0123456789ABCDEF';
       let color = '#';
