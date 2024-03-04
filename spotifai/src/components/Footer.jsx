@@ -14,7 +14,9 @@ export default function Footer() {
         <CurrentTrack />
         <PlayerControls />
         <Volume />
-        <Kaleidoscope />
+        <KaleidoscopeWrapper>
+          <Kaleidoscope />
+        </KaleidoscopeWrapper>
       </ContentContainer>
     </Container>
   );
@@ -36,4 +38,8 @@ const ContentContainer = styled.div`
   align-items: center;
   flex: 1;
   justify-content: space-between;
+`;
+
+const KaleidoscopeWrapper = styled.div`
+  padding-right: 1rem; /* Add padding to prevent bleeding */
 `;
