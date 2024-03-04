@@ -14,6 +14,5 @@
 - Since, there are limitations to being able to globally deploy the app due to SpotifyAPI restrictions, currently each member needs to be email verified by our team using a whitelist.
 - There are also other limitations such as song playing being limited to Spotify Premium members.
 
-Instructions for local deployment:
 1. The user should send our team the email that is linked with their spotify account
 2. Go to the release link and log in with your email
