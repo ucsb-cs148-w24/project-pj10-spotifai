@@ -10,7 +10,7 @@ export default function Navbar({ navbackground }) {
     <Container navBackground={navbackground}>
       <div className="search__bar">
         <FaSearch />
-        <input type="text" placeholder="Find songs" />
+        <input type="text" placeholder="Find playlists" />
       </div>
       <div className="avatar">
         <a href={userInfo?.userUrl}>
@@ -28,7 +28,7 @@ const Container = styled.div`
   align-items: center;
   padding: 2rem;
   height: 15vh;
-  position: sticky;
+  position: relative;
   top: 0;
   transition: 0.3s ease-in-out;
   background-color: ${({ navbackground }) =>

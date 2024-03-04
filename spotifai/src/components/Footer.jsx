@@ -5,6 +5,7 @@ import CurrentTrack from "./CurrTrack";
 import Kaleidoscope from "./beat_visualizer/Kaleidoscope.js";
 import PlayerControls from "./PlayerControls";
 import Volume from "./Volume";
+import YoutubeLinkButton from "./YoutubeLinkButton.jsx";
 
 export default function Footer() {
   return (

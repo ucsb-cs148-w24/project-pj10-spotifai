@@ -169,11 +169,11 @@ export default function Body({ headerbackground }) {
                         </div>
                         <div className="info">
                           <span className="name">{name}</span>
-                          <span>{artists}</span>
+                          <span>{Array.isArray(artists) ? artists.join(', ') : artists}</span>
                         </div>
                       </div>
                       <div className="col">
-                        <span>{album}</span>
+                        <span>{album} style={{ marginRight: '10px' }}</span>
                       </div>
                       <div className="col">
                         <span>{msToMinutesAndSeconds(duration)}</span>
@@ -210,20 +210,22 @@ const Container = styled.div`
       align-self: center;
       margin-top: 10px;
       margin-left: 250px;
+      padding-right: 10rem;
     }
   }
   .list {
     .header-row {
       display: grid;
+      position: sticky;
       grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
       margin: 1rem 0 0 0;
       color: #dddcdc;
-      position: sticky;
-      top: 15vh;
+      top: ${({ headerbackground }) =>
+        headerbackground ? "15vh" : "0"};
       padding: 1rem 3rem;
       transition: 0.3s ease-in-out;
       background-color: ${({ headerbackground }) =>
-        headerbackground ? "#000000dc" : "none"};
+        headerbackground ? "#000000dc" : "black"};
     }
     .tracks {
       margin: 0 2rem;
