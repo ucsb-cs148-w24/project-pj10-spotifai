@@ -15,4 +15,5 @@
 - There are also other limitations such as song playing being limited to Spotify Premium members.
 
 1. The user should send our team the email that is linked with their spotify account
-2. Go to the release link and log in with your email
+2. Open Spotify either on your desktop or your phone (Play a song for a second to notify the API that your aren't afk)
+4. Go to the release link and log in with your email
