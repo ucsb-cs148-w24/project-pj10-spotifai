@@ -41,5 +41,5 @@ const ContentContainer = styled.div`
 `;
 
 const KaleidoscopeWrapper = styled.div`
-  padding-right: 1rem; /* Add padding to prevent bleeding */
+  padding-right: 2rem;
 `;
