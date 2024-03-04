@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export default function Login() {
     const handleClick = async () => {
-        const clientID = "1a10f4297b394355bfbdc500a3e6d1f8";
-        const redirectUrl = "http://localhost:3000/";
+        const clientID = "bc60480d52f9435880b81877ad57e4dc";
+        const redirectUrl = "https://project-pj10-spotifai.vercel.app/";
         const apiUrl = "https://accounts.spotify.com/authorize"
         const scope = [
             "user-read-private",
