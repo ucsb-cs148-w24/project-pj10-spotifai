@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import InfoBox from './InfoBox.jsx';
+import convertCountryToCode from "./converter.js"
 
-const WorldMapChart = () => {
+const WorldMapChart = (props) => {
   const ref = useRef();
   const [boxVis, setBoxVis] = React.useState(false);
   const [boxText, setBoxText] = React.useState("filler");
@@ -25,18 +26,20 @@ const WorldMapChart = () => {
 
     // Data and color scale
     var colorScale = d3.scaleThreshold()
-      .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
+      .domain([10,20,30,40,50,60,70,80,90])
       .range(d3.schemeBlues[7]);
 
     // Load external data
     Promise.all([
       fetch("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(response => response.json()),
-      fetch("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv").then(response => response.text())
+      fetch(`https://smmzhu.pythonanywhere.com/?query=${props.query}`).then(response => response.json())
     ]).then(function([topo, populationData]) {
-      let data = new Map();
-      let parsedCSV = d3.csvParse(populationData);
-      parsedCSV.forEach(d => {
-        data.set(d.code, +d.pop);
+      let data = new Map(); 
+      let parsedCSV = populationData[props.query];
+      Object.entries(parsedCSV).forEach(([key, value]) => {
+        if (!(convertCountryToCode(key) == "Unknown")) {
+          data.set(convertCountryToCode(key), value);
+        }
       });
 
       // Mouseover and mouseleave functions
