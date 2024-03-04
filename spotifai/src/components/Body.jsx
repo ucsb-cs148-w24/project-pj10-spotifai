@@ -210,12 +210,13 @@ const Container = styled.div`
       align-self: center;
       margin-top: 10px;
       margin-left: 250px;
-      padding-right: 4rem;
+      padding-right: 6rem;
     }
   }
   .list {
     .header-row {
       display: grid;
+      position: sticky;
       grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
       margin: 1rem 0 0 0;
       color: #dddcdc;
