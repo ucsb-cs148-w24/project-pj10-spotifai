@@ -6,7 +6,7 @@
   }
   
 .generateButton {
-  background-color: black;
+  background-color: rgb(60, 97, 60);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -14,7 +14,18 @@
   cursor: pointer;
   font-size: 16px;
   margin-top: 10px;
-  margin-bottom: -60px;
+  margin-bottom: -30px;
+}
+
+.downloadButton {
+  background-color: rgb(60, 97, 60);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .coverPreview img {
@@ -22,6 +33,5 @@
   max-width: 250px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
 }
  
