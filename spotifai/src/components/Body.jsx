@@ -173,7 +173,7 @@ export default function Body({ headerbackground }) {
                         </div>
                       </div>
                       <div className="col">
-                        <span>{album}</span>
+                        <span>{album} style={{ marginRight: '10px' }}</span>
                       </div>
                       <div className="col">
                         <span>{msToMinutesAndSeconds(duration)}</span>
