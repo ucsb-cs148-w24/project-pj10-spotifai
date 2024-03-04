@@ -218,11 +218,11 @@ const Container = styled.div`
       grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
       margin: 1rem 0 0 0;
       color: #dddcdc;
+      position: sticky;
       top: 15vh;
       padding: 1rem 3rem;
       transition: 0.3s ease-in-out;
-      background-color: ${({ headerbackground }) =>
-        headerbackground ? "#000000dc" : "none"};
+      background-color: #000000dc;
     }
     .tracks {
       margin: 0 2rem;
