@@ -34,5 +34,6 @@ const Container = styled.div`
 const ContentContainer = styled.div`
   display: flex;
   align-items: center;
+  flex: 1;
   justify-content: space-between;
 `;
