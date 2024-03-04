@@ -14,8 +14,8 @@ export default function YoutubeLinkButton(props) {
     };
     return (
         <button onClick={handleClick} style={{ backgroundColor: 'rgb(60, 97, 60)', color: 'white', fontSize: '16px', padding: '10px 20px', borderRadius: '20px', border: 'none', cursor: 'pointer' }}>
-            Open Song in Youtube
-            <FontAwesomeIcon icon={faYoutube} />
+            Open Song in Youtube   
+            <FontAwesomeIcon icon={faYoutube} style={{ marginLeft: '5px' }}/>
         </button>
     );
 }

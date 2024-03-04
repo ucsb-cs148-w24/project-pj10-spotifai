@@ -210,7 +210,7 @@ const Container = styled.div`
       align-self: center;
       margin-top: 10px;
       margin-left: 250px;
-      padding-right: 6rem;
+      padding-right: 8rem;
     }
   }
   .list {
