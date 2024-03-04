@@ -12,7 +12,6 @@ export default function Kaleidoscope() {
       if (!currentPlaying) return;
 
       try {
-        // Fetch audio analysis
         const responseAnalysis = await axios.get(
           `https://api.spotify.com/v1/audio-analysis/${currentPlaying.id}`,
           {

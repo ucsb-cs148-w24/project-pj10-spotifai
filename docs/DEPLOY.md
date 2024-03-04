@@ -11,11 +11,9 @@
     - utils: contains utility files used throughout the project
 
 **Deployment Instructions**
-- Since, there are limitations to being able to globally deploy the app due to SpotifyAPI restrictions, currently only local deployment is possible.
+- Since, there are limitations to being able to globally deploy the app due to SpotifyAPI restrictions, currently each member needs to be email verified by our team using a whitelist.
+- There are also other limitations such as song playing being limited to Spotify Premium members.
 
-Instructions for local deployment:
-1. Log into the spotify developer's dashboard and acquire your client ID to be used in the program.
-2. Enter this client ID into Login.jsx
-3. cd into the spotifai folder
-4. In bash terminal, do "npm run build" to build the app
-5. To start, type "npm start" into the terminal
+1. The user should send our team the email that is linked with their spotify account
+2. Open Spotify either on your desktop or your phone (Play a song for a second to notify the API that your aren't afk)
+4. Go to the release link (https://project-pj10-spotifai.vercel.app/) and log in with your email
