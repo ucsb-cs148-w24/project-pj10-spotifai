@@ -10,8 +10,8 @@ export default function Footer() {
   return (
     <Container>
       {/* <BeatVisualizer /> */}
-      <Kaleidoscope />
       <ContentContainer>
+        <Kaleidoscope />
         <CurrentTrack />
         <PlayerControls />
         <Volume />
