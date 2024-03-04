@@ -11,9 +11,11 @@ export default function Footer() {
     <Container>
       {/* <BeatVisualizer /> */}
       <Kaleidoscope />
-      <CurrentTrack />
-      <PlayerControls />
-      <Volume />
+      <ContentContainer>
+        <CurrentTrack />
+        <PlayerControls />
+        <Volume />
+      </ContentContainer>
     </Container>
   );
 }
@@ -23,9 +25,13 @@ const Container = styled.div`
   width: 100%;
   background-color: #181818;
   border-top: 1px solid #282828;
-  display: grid;
-  grid-template-columns: 0.5fr 0.5fr 2fr 1fr;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 0 1rem;
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
