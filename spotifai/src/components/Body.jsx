@@ -210,7 +210,7 @@ const Container = styled.div`
       align-self: center;
       margin-top: 10px;
       margin-left: 250px;
-      padding-right: 2rem;
+      padding-right: 4rem;
     }
   }
   .list {
@@ -219,11 +219,12 @@ const Container = styled.div`
       grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
       margin: 1rem 0 0 0;
       color: #dddcdc;
-      top: 15vh;
+      top: ${({ headerbackground }) =>
+        headerbackground ? "15vh" : "0"};
       padding: 1rem 3rem;
       transition: 0.3s ease-in-out;
       background-color: ${({ headerbackground }) =>
-        headerbackground ? "#000000dc" : "none"};
+        headerbackground ? "#000000dc" : "black"};
     }
     .tracks {
       margin: 0 2rem;
