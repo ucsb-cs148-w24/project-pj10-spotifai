@@ -110,7 +110,7 @@ export default function Body({ headerbackground }) {
               />
             </div>
             <div className="dem-map">
-              <WorldMapChart />
+              <WorldMapChart query = {currQuery} />
             </div>
           </div>
           <div className="list">
