@@ -42,8 +42,8 @@ export default function Kaleidoscope() {
 
         dispatch({ type: reducerCases.SET_BEATS, beats });
 
-        console.log("Beats array:", beats);
-        console.log("Progress in milliseconds:", progressMs);
+        // console.log("Beats array:", beats);
+        // console.log("Progress in milliseconds:", progressMs);
 
         changeColor(beats, progressMs);
       } catch (error) {
@@ -74,7 +74,7 @@ export default function Kaleidoscope() {
     ) {
       currentBeatIndex++;
     }
-    console.log(currentBeatIndex);
+    // console.log(currentBeatIndex);
 
     // if there are beats remaining after current song position, initiate animation
     if (currentBeatIndex < beats.length) {
