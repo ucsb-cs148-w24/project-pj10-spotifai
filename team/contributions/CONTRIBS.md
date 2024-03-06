@@ -1,16 +1,16 @@
 in progress
 
-###Aaron###
+### Aaron
 - bla
-###Richard###
+### Richard
 - bla
-###Grace###
+### Grace
 - bla
-###Lindsey###
+### Lindsey 
 - bla
-###Sam###
+### Sam
 - bla
-###Kyle###
+### Kyle
 - bla
-###Ethan###
+### Ethan
 - bla
