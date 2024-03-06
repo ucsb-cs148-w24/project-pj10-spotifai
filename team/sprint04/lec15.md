@@ -1,0 +1,5 @@
+Attendance: 
+- Ethan
+- Kyle
+- Sam
+
