@@ -3,6 +3,19 @@ import * as d3 from 'd3';
 import InfoBox from './InfoBox.jsx';
 import convertCountryToCode from "./converter.js"
 
+const fetchPlus = (url, retries) =>
+  fetch(url)
+    .then(res => {
+      if (res.ok) {
+        return res.json()
+      }
+      if (retries > 0) {
+        return fetchPlus(url, retries - 1)
+      }
+      throw new Error(res.status)
+    })
+    .catch(error => console.error(error.message))
+
 const WorldMapChart = (props) => {
   const ref = useRef();
   const [boxVis, setBoxVis] = React.useState(false);
@@ -32,8 +45,10 @@ const WorldMapChart = (props) => {
     // Load external data
     Promise.all([
       fetch("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(response => response.json()),
-      fetch(`https://smmzhu.pythonanywhere.com/?query=${props.query}`).then(response => response.json())
+      fetchPlus(`https://smmzhu.pythonanywhere.com/?query=${props.query}`, 3)
+      // .then(response => response.json()),
     ]).then(function([topo, populationData]) {
+      console.log(populationData);
       let data = new Map(); 
       let parsedCSV = populationData[props.query];
       Object.entries(parsedCSV).forEach(([key, value]) => {
@@ -88,7 +103,7 @@ const WorldMapChart = (props) => {
           .on("mouseleave", mouseLeave)
           
     });
-  }, []);
+  }, [props.query]);
 
   return(
     <>
