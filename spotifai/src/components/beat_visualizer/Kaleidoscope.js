@@ -89,7 +89,7 @@ export default function Kaleidoscope() {
       // iterate through remaining beats in song
       for (let i = currentBeatIndex; i < beats.length; i++) {
         const beat = beats[i];
-        console.log(beat.duration)
+        // console.log(beat.duration)
   
         // populate timeline
         timeline.add({
