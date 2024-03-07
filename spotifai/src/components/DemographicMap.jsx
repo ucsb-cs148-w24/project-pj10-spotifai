@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import InfoBox from './InfoBox.jsx';
 import convertCountryToCode from "./converter.js"
+import Tooltip from "@mui/material/Tooltip";
 
 const fetchPlus = (url, retries) =>
   fetch(url)
@@ -115,6 +116,11 @@ const WorldMapChart = (props) => {
           ref={ref}
         >
         </svg>
+        <Tooltip title="This data is pulled from Google Trends data over the past 5 years. Indices are calculated as a ratio of the search for the song divided by total google searches in that country. Then the entire map is normalized to be a value between 0 and 100." placement="top">
+          <div style={{ position: "absolute", top: "-150px", left: "0px", transform: "translateX(-50%)", width: "250px",  textAlign: "center"}}>
+            <h1 style={{color: "white", fontSize: "24px", transition: "text-shadow 0.3s"}} onMouseEnter={(e) => e.target.style.textShadow = "0 0 10px white"} onMouseLeave={(e) => e.target.style.textShadow = "none"}>POPULARITY INDEX</h1>
+          </div>
+        </Tooltip>
       </div> 
       <InfoBox isVisible = {boxVis} infoText = {boxText} position = {position}/>
     </>
