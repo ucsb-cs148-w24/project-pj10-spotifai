@@ -4,13 +4,13 @@ This dashboard app is a feature-rich platform designed to elevate the music expe
 TLDR: SpotifAI is an innovative dashboard app that enhances the music experience with personalized playlist covers, customizable features, YouTube MV integration, demographic insights, and a beat visualizer.
 
 # Team Info
-- Aaron Drumm
-- Richard Fang
-- Grace Feng
-- Ethan Solomon
-- Kyle Uwaine
-- Lindsey Wen
-- Samuel Zhu
+- Aaron Drumm, GitHub ID: SloggyYoggy
+- Richard Fang, GitHub ID: richardfang888
+- Grace Feng, GitHub ID: gracefeng05
+- Ethan Solomon, GitHub ID: ethansolomon49
+- Kyle Uwaine, GitHub ID: kyleuwaine
+- Lindsey Wen, GitHub ID: lindseywn
+- Samuel Zhu, GitHub ID: smmzhu
 
 # Tech Stack
 ## APIs
