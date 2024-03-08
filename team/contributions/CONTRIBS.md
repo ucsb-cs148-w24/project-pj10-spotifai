@@ -10,7 +10,8 @@ in progress
   - [YouTube to mp3 Downloader](https://github.com/silvanohirtie/youtube-mp3-downloader)
   - Used YouTube API to get YouTube video of currently playing song's audio --> pass video to YouTube to mp3 downloader Flask server --> download song mp3 --> pass mp3 to Three.js audio visualizer --> display on dashboard.
 ### Lindsey 
-- bla
+- Worked on playlist cover generation such that users can generate and download the generated image
+- Experimented with prompting DALLE to improve the accuracy of the generated playlist covers
 ### Sam
 - Created d3 component and data input, also integrated pytrends into custom flask server to bypass cord
 - Created open in youtube link button with youtube API integration
