@@ -19,4 +19,5 @@ in progress
 - Integrated Spotify API and OpenAI API to implement the AI playlist cover generation
 - Worked on prompt engineering to improve the cover generation
 ### Ethan
-- bla
+- Working on finding a way to get lyrics from song using lyrics searcher API  
+- Helped planning UI / wireframe  
