@@ -32,8 +32,8 @@ Continue:
 
 ## Retro assessment
 * We used the the Start/Stop/Continue framework for this retro meeting
+* Our previous change for the retro was successful; it was helpful having more communication regarding completion and difficulty of tasks. 
 * The meeting was successful, with active participation from everyone leading to the final decisions of mainly just imporoving what we have and working on ease of use and acces. Overall, we found it productive and beneficial for our team to engage in review and reflection.
-* Advice for next leader: be prepared before meeting, have prompts to keep conversation going or points to lead discussion
 
 ## Experiment/Change
 - N/A
