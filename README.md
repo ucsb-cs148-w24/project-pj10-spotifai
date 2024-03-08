@@ -38,7 +38,7 @@ Spotify users seeking to elevate their engagement with their music.
 # [Design Doc](https://github.com/ucsb-cs148-w24/project-pj10-spotifai/blob/main/docs/DESIGN.md)
 
 # Functionality
-1. **Login with Spotify + accept terms and conditions.**
+1. Login with Spotify + accept terms and conditions.
 2. You will be redirected to a clone of your Spotify dashboard... but better! There are 4 main added functionalities on the **SpotifAI** dashboard: AI playlist cover generator, popularity stats, beat visualizer, and YouTube music video player.
    - **AI Playlist Cover Generator:** Click 'Generate Playlist Cover' to get a custom image generated using a prompt based on the artists in your playlist!
    - **Popularity Stats:** Mouse over an interactive map to see how many people from each country are listening to your current artist!
