@@ -1,5 +1,3 @@
-in progress
-
 ### Aaron
 - Worked on making the Spotify API connection allowing users to log in and get access to their data along with making more aesthetic UI
 - Figured out connection between users and spotify api allowing certain emails to log in
