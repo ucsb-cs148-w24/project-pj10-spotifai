@@ -1,9 +1,11 @@
 in progress
 
 ### Aaron
-- bla
+- Worked on making the Spotify API connection allowing users to log in and get access to their data along with making more aesthetic UI
+- Figured out connection between users and spotify api allowing certain emails to log in
 ### Richard
-- bla
+- Worked on making the Spotify API connection allowing users to log in and get access to their data along with making more aesthetic UI
+- Deployed the project on Vercel allowing anyone to access the page 
 ### Grace
 - **Beat Visualizer**
   - Three.js, Spotify API, Flask, Perlin.js, anime.js
