@@ -22,6 +22,7 @@ TLDR: SpotifAI is an innovative dashboard app that enhances the music experience
 - d3.js
 - Three.js
 - React.js
+- Perlin.js
 ## Deployment
 - Vercel
   
