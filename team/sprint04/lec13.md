@@ -8,8 +8,8 @@ attendance:
  - aaron
 
 what are we working on:
- - richard + aaron: find a way to get any user to be able to log in without having to whitelist
- - grace: working on the beat visualizer — trying to use mp3 downloader for more advanced visualization
- - kyle: finishing dalle — new prompt generation tactics for more fitting images
- - lindsey + ethan: get and show the lyrics on the lyric showing component and syncing it, and figure out the roadmap for a lyric analysis component
- - sam: found new way for demographic data looking to google trends implementation
+ - richard + aaron: deployed and looking into changing up the UI/ working on documentation
+ - grace: trying python anywhere and other approaches to getting the mp3 and beat visualizer working
+ - kyle: finishing dalle — getting more information from the playlists for more accurate prompts and pictures
+ - lindsey + ethan: get and show the lyrics on the lyric showing component, polishing up UI and UX for deployment
+ - sam: looking into serpApi for the Google Trends data (it might not work) looking for alternatives
