@@ -1,7 +1,6 @@
 attendance:
  - richard
  - lindsey
- - kyle
  - grace
  - ethan
  - sam
