@@ -3,7 +3,6 @@ import "./App.css";
 import PlaylistCoverGenerator from "./components/cover/PlaylistCover.jsx";
 // import BeatVisualizer from "./components/beat_visualizer/BeatVisualizer.js";
 import Kaleidoscope from "./components/beat_visualizer/Kaleidoscope.js";
-import LyricAnalysis from "./components/lyric_analysis/LyricAnalysis.js";
 import React, { useEffect } from "react";
 import Login from "./components/Login.jsx";
 import { reducerCases } from "./utils/Constants.js";

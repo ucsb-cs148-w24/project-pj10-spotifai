@@ -75,7 +75,7 @@ def get_token():
 
 def create_spotify_oauth():
     # Change scopes for our needs, see Spotify API documentation
-    return SpotifyOAuth(client_id = "fbc80092a97f497a882bd35a087a480e",
+    return SpotifyOAuth(client_id = "f061a7d8adbf448d846c249c9069f16f",
                         client_secret = "d887c17a76de416996ab672576b68526",
                         redirect_uri = url_for('redirect_page', _external=True),
                         scope = 'playlist-read-private ugc-image-upload playlist-modify-public playlist-modify-private user-read-email user-read-private'

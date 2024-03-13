@@ -7,6 +7,7 @@ import { reducerCases } from "../utils/Constants";
 import PlaylistCoverGenerator from "./cover/PlaylistCover.jsx";
 import WorldMapChart from "./DemographicMap.jsx";
 import YoutubeLinkButton from "./YoutubeLinkButton.jsx";
+import Lyrics from "./Lyrics.jsx";
 
 export default function Body({ headerbackground }) {
   const [{ token, selectedPlaylist, selectedPlaylistId }, dispatch] =
@@ -105,6 +106,9 @@ export default function Body({ headerbackground }) {
             </div>
             <div>
               <YoutubeLinkButton query = {currQuery} api_key = {"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"} />
+            </div>
+            <div >
+              <Lyrics track_id = {"4PTG3Z6ehGkBFwjybzWkR8"}/>
             </div>
             <div className="dem-map">
               <WorldMapChart />
