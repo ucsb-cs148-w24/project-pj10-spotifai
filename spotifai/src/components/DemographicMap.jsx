@@ -108,20 +108,21 @@ const WorldMapChart = (props) => {
 
   return(
     <>
-      <div style = {{height: "100%", width: "100%", backgroundColor: "red", position: "relative"}} onMouseMove={handleMouseMove}>
-        <svg
-          width = {250}
-          height = {200}
-          style = {{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}
-          ref={ref}
-        >
-        </svg>
-        <Tooltip title="This data is pulled from Google Trends data over the past 5 years. Indices are calculated as a ratio of the search for the song divided by total google searches in that country. Then the entire map is normalized to be a value between 0 and 100." placement="top">
-          <div style={{ position: "absolute", top: "-150px", left: "0px", transform: "translateX(-50%)", width: "250px",  textAlign: "center"}}>
-            <h1 style={{color: "white", fontSize: "24px", transition: "text-shadow 0.3s"}} onMouseEnter={(e) => e.target.style.textShadow = "0 0 10px white"} onMouseLeave={(e) => e.target.style.textShadow = "none"}>POPULARITY INDEX</h1>
-          </div>
-        </Tooltip>
-      </div> 
+        <div style = {{height: "100%", width: "100%", position: "relative"}} onMouseMove={handleMouseMove}>
+          <div style = {{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -56%)", backgroundColor: "#00000060", height: "275px", width: "275px", borderRadius: "25px"}}></div>
+          <svg
+            width = {250}
+            height = {200}
+            style = {{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}
+            ref={ref}
+          >
+          </svg>
+          <Tooltip title="This data is pulled from Google Trends data over the past 5 years. Indices are calculated as a ratio of the search for the song divided by total google searches in that country. Then the entire map is normalized to be a value between 0 and 100." placement="top">
+            <div style={{ position: "absolute", top: "-150px", left: "0px", transform: "translateX(-50%)", width: "250px",  textAlign: "center"}}>
+              <h1 style={{color: "white", fontSize: "24px", transition: "text-shadow 0.3s"}} onMouseEnter={(e) => e.target.style.textShadow = "0 0 10px white"} onMouseLeave={(e) => e.target.style.textShadow = "none"}>Popularity Index</h1>
+            </div>
+          </Tooltip>
+        </div> 
       <InfoBox isVisible = {boxVis} infoText = {boxText} position = {position}/>
     </>
   );
