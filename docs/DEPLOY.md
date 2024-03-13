@@ -3,7 +3,7 @@
 - spotifai: contains the sourcecode and application file for the project
   - public: contains public data used for the project, such as logos and images
   - src: contains sourcecode for the project
-    - components: contains different component files used in project
+    - components: contains different component files used in project (Each independent file is correspondingly named by its function)
       - beat_visualizer: contains files related to the beat visualizer implementation
       - cover: contains files related to the AI generated covers implementation
       - lyric_analysis: contains files related to the lyric analysis implementation
@@ -11,9 +11,9 @@
     - utils: contains utility files used throughout the project
 
 **Deployment Instructions**
-- Since, there are limitations to being able to globally deploy the app due to SpotifyAPI restrictions, currently each member needs to be email verified by our team using a whitelist.
-- There are also other limitations such as song playing being limited to Spotify Premium members.
-
-1. The user should send our team the email that is linked with their spotify account
-2. Open Spotify either on your desktop or your phone (Play a song for a second to notify the API that your aren't afk)
-4. Go to the release link (https://project-pj10-spotifai.vercel.app/) and log in with your email
+1. Acquire an OpenAI API key by registering with OpenAI and following their tutorial to generate a key. (It may be necessary to buy $5 credit for the Dall-E component to function)
+2. Acquire a Spotify client ID by making a project on the Spotify Developers page.
+3. Put the OpenAI API key and the Spotify client ID into the required sections (Login.jsx and PlaylistCover.jsx)
+4. Secure the API key and client ID if you deem it necessary.
+5. In the terminal, "cd" into the spotifai folder and run "npm run build", followed by "npm start"
+6. Use the app.
