@@ -10,7 +10,7 @@ import YoutubeLinkButton from "./YoutubeLinkButton.jsx";
 import Lyrics from "./Lyrics.jsx";
 
 export default function Body({ headerbackground }) {
-  const [{ token, selectedPlaylist, selectedPlaylistId }, dispatch] =
+  const [{ token, selectedPlaylist, selectedPlaylistId, currentPlaying}, dispatch] =
     useStateProvider();
   const [currQuery, setQuery] = useState("");
 
@@ -57,6 +57,8 @@ export default function Body({ headerbackground }) {
     track_number
   ) => {
     setQuery(name + " " + artists[0]);
+    const track = selectedPlaylist.tracks.find(track => track.id === id);
+    const duration = track ? track.duration : null; // Assume duration is stored directly in track object
     const response = await axios.put(
       `https://api.spotify.com/v1/me/player/play`,
       {
@@ -79,11 +81,12 @@ export default function Body({ headerbackground }) {
         name,
         artists,
         image,
+        duration,
       };
       dispatch({ type: reducerCases.SET_PLAYING, currentPlaying });
       dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
     } else {
-      dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
+      dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: false });
     }
   };
   const msToMinutesAndSeconds = (ms) => {
@@ -108,7 +111,7 @@ export default function Body({ headerbackground }) {
               <YoutubeLinkButton query = {currQuery} api_key = {"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"} />
             </div>
             <div >
-              <Lyrics track_id = {"4PTG3Z6ehGkBFwjybzWkR8"}/>
+              <Lyrics track_id={currentPlaying.id} duration={currentPlaying.duration} />
             </div>
             <div className="dem-map">
               <WorldMapChart />
