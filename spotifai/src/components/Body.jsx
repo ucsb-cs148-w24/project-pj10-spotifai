@@ -108,7 +108,7 @@ export default function Body({ headerbackground }) {
               <YoutubeLinkButton query = {currQuery} api_key = {"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"} />
             </div>
             <div >
-              <Lyrics track_id = {"4PTG3Z6ehGkBFwjybzWkR8"}/>
+              <Lyrics track_id = {currQuery} duration = {currQuery.duration}/>
             </div>
             <div className="dem-map">
               <WorldMapChart />
