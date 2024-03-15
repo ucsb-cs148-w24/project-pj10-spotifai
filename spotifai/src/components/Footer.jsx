@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import styled from "styled-components";
 import CurrentTrack from "./CurrTrack";
-import { useStateProvider } from "../utils/StateProvider";
-import { reducerCases } from "../utils/Constants";
 // import Kaleidoscope from "./beat_visualizer/Kaleidoscope.js";
 import GenerateAudioVisualizer from "./audiovisualizer/YTmp3/GenerateAudioVisualizer";
 import PlayerControls from "./PlayerControls";
