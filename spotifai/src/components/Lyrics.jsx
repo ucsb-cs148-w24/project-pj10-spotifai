@@ -36,7 +36,9 @@ export default function Lyrics(props) {
 
     return (
         <div>
-            <button onClick={handleClick}>Get Lyrics</button>
+            <button onClick={handleClick} style={{ backgroundColor: 'rgb(60, 97, 60)', color: 'white', fontSize: '16px', padding: '10px 20px', borderRadius: '20px', border: 'none', cursor: 'pointer' }}>
+            Get Lyrics   
+            </button>
             {showPopup && (
                 <Draggable>
                     <div style={{ backgroundColor: 'white', position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '50%', height: '50%', overflow: 'auto', padding: '20px', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)', zIndex: '9999' }}>
@@ -68,3 +70,4 @@ async function fetchLyrics(track_id){
         return lyrics;
     }
 }
+

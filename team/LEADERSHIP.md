@@ -15,17 +15,20 @@
 | Wed 01/31 | Aaron             | Participated in a _help channel                        |
 | Mon 02/05 | Grace             | Scrum master (lec07)                                   |
 | Wed 02/07 | Lindsey           | Scrum master (lec08)                                   |
-| Fri 02/16 | Aaron             | Lead second retro                                      |
-| Mon 02/19 | Grace             | Scrum master (lec09)                                   |
-| Wed 02/21 | Sam               | Scrum master (lec10)                                   |
-| Mon 02/26 | Sam               | Scrum master (lec11)                                   |
-| Wed 02/28 | Ethan             | Scrum master (lec12)                                   |
+| Mon 02/12 | Grace             | Scrum master (lec09)                                   |
+| Wed 02/14 | Sam               | Scrum master (lec10)                                   |
+| Fri 02/16 | Aaron             | Lead second retro                                      | 
+| Wed 02/21 | Sam               | Scrum master (lec11)                                   |                                
+| Mon 02/26 | Ethan             | Scrum master (lec12)                                   |
+| Wed 02/28 | Lindsey           | Scrum master (lec13)                                   |
+| Wed 03/06 | Kyle              | Scrum master (lec15)                                   |
+| Wed 03/08 | Ethan             | Lead third retro                                       |
 
 # Future Leadership Roles
-- **Aaron Drumm:** Retro 3 Leader
+- **Aaron Drumm:** Scrum Master
 - **Richard Fang:** Testing/QA Coordinator
 - **Grace Feng:** UX Coordinator, User Manual Coordinator
-- **Ethan Solomon:** Scrum Master
+- **Ethan Solomon:** Retro 3 Leader
 - **Kyle Uwaine:** Deployment Document Coordinator
 - **Lindsey Wen:** Product Owner, Final Presentation Leader
 - **Samuel Zhu:** Design Document Coordinator

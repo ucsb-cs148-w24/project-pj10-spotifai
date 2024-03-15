@@ -100,7 +100,7 @@ export default function Body({ headerbackground }) {
         <>
           <div className="playlist">
             <div className="cover">
-              <PlaylistCoverGenerator/>
+              <PlaylistCoverGenerator />
             </div>
             <div className="details">
               <span className="type">PLAYLIST</span>
@@ -108,13 +108,16 @@ export default function Body({ headerbackground }) {
               <p className="description">{selectedPlaylist.description}</p>
             </div>
             <div>
-              <YoutubeLinkButton query = {currQuery} api_key = {"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"} />
+              <YoutubeLinkButton
+                query={currQuery}
+                api_key={"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"}
+              />
             </div>
             <div >
               <Lyrics track_id={currentPlaying.id ?? "No song selected"} duration={currentPlaying.duration ?? "No song selected"} />
             </div>
             <div className="dem-map">
-              <WorldMapChart />
+              <WorldMapChart query = {currQuery} />
             </div>
           </div>
           <div className="list">
@@ -173,11 +176,11 @@ export default function Body({ headerbackground }) {
                         </div>
                         <div className="info">
                           <span className="name">{name}</span>
-                          <span>{artists}</span>
+                          <span>{Array.isArray(artists) ? artists.join(', ') : artists}</span>
                         </div>
                       </div>
                       <div className="col">
-                        <span>{album}</span>
+                        <span style={{ marginRight: '10px' }}>{album} </span>
                       </div>
                       <div className="col">
                         <span>{msToMinutesAndSeconds(duration)}</span>
@@ -214,20 +217,22 @@ const Container = styled.div`
       align-self: center;
       margin-top: 10px;
       margin-left: 250px;
+      padding-right: 10rem;
     }
   }
   .list {
     .header-row {
       display: grid;
+      position: sticky;
       grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
       margin: 1rem 0 0 0;
       color: #dddcdc;
-      position: sticky;
-      top: 15vh;
+      top: ${({ headerbackground }) =>
+        headerbackground ? "15vh" : "0"};
       padding: 1rem 3rem;
       transition: 0.3s ease-in-out;
       background-color: ${({ headerbackground }) =>
-        headerbackground ? "#000000dc" : "none"};
+        headerbackground ? "#000000dc" : "black"};
     }
     .tracks {
       margin: 0 2rem;

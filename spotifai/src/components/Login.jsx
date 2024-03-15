@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export default function Login() {
     const handleClick = async () => {
-        const clientID = "1a10f4297b394355bfbdc500a3e6d1f8";
-        const redirectUrl = "http://localhost:3000/";
+        const clientID = "bc60480d52f9435880b81877ad57e4dc";
+        const redirectUrl = "https://project-pj10-spotifai.vercel.app/";
         const apiUrl = "https://accounts.spotify.com/authorize"
         const scope = [
             "user-read-private",
@@ -21,8 +21,30 @@ export default function Login() {
     };
     return <Container>
         <img src="" alt="" />
-        <button onClick={handleClick}>Connect Spotify</button>
+        <StyledButton onClick={handleClick}>Connect Spotify</StyledButton>
     </Container>
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+    background-color: black; 
+    height: 100vh; 
+    width: 100vw; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
+`;
+
+const StyledButton = styled.button`
+    background-color: rgb(60, 97, 60);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: 10px;
+    &:hover {
+        background-color: #004d00; 
+    }
+`;

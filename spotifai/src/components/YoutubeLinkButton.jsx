@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 export default function YoutubeLinkButton(props) {
     const query = props.query;
@@ -11,10 +13,12 @@ export default function YoutubeLinkButton(props) {
         window.open(`https://www.youtube.com/watch?v=${youtubeURL}`, "_blank");
     };
     return (
-        <button onClick={handleClick}>Open in Youtube</button>
+        <button onClick={handleClick} style={{ backgroundColor: 'rgb(60, 97, 60)', color: 'white', fontSize: '16px', padding: '10px 20px', borderRadius: '20px', border: 'none', cursor: 'pointer' }}>
+            Open Song in Youtube   
+            <FontAwesomeIcon icon={faYoutube} style={{ marginLeft: '5px' }}/>
+        </button>
     );
 }
-
 async function fetchYoutubeURL(query, key){
     const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${query}&key=${key}`);
     const data = await response.json();

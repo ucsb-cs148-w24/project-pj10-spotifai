@@ -1,8 +1,23 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import InfoBox from './InfoBox.jsx';
+import convertCountryToCode from "./converter.js"
+import Tooltip from "@mui/material/Tooltip";
 
-const WorldMapChart = () => {
+const fetchPlus = (url, retries) =>
+  fetch(url)
+    .then(res => {
+      if (res.ok) {
+        return res.json()
+      }
+      if (retries > 0) {
+        return fetchPlus(url, retries - 1)
+      }
+      throw new Error(res.status)
+    })
+    .catch(error => console.error(error.message))
+
+const WorldMapChart = (props) => {
   const ref = useRef();
   const [boxVis, setBoxVis] = React.useState(false);
   const [boxText, setBoxText] = React.useState("filler");
@@ -25,18 +40,22 @@ const WorldMapChart = () => {
 
     // Data and color scale
     var colorScale = d3.scaleThreshold()
-      .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
+      .domain([10,20,30,40,50,60,70,80,90])
       .range(d3.schemeBlues[7]);
 
     // Load external data
     Promise.all([
       fetch("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(response => response.json()),
-      fetch("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv").then(response => response.text())
+      fetchPlus(`https://smmzhu.pythonanywhere.com/?query=${props.query}`, 3)
+      // .then(response => response.json()),
     ]).then(function([topo, populationData]) {
-      let data = new Map();
-      let parsedCSV = d3.csvParse(populationData);
-      parsedCSV.forEach(d => {
-        data.set(d.code, +d.pop);
+      console.log(populationData);
+      let data = new Map(); 
+      let parsedCSV = populationData[props.query];
+      Object.entries(parsedCSV).forEach(([key, value]) => {
+        if (!(convertCountryToCode(key) == "Unknown")) {
+          data.set(convertCountryToCode(key), value);
+        }
       });
 
       // Mouseover and mouseleave functions
@@ -85,19 +104,25 @@ const WorldMapChart = () => {
           .on("mouseleave", mouseLeave)
           
     });
-  }, []);
+  }, [props.query]);
 
   return(
     <>
-      <div style = {{height: "100%", width: "100%", backgroundColor: "red", position: "relative"}} onMouseMove={handleMouseMove}>
-        <svg
-          width = {250}
-          height = {200}
-          style = {{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}
-          ref={ref}
-        >
-        </svg>
-      </div> 
+        <div style = {{height: "100%", width: "100%", position: "relative"}} onMouseMove={handleMouseMove}>
+          <div style = {{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -56%)", backgroundColor: "#00000060", height: "275px", width: "275px", borderRadius: "25px"}}></div>
+          <svg
+            width = {250}
+            height = {200}
+            style = {{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}
+            ref={ref}
+          >
+          </svg>
+          <Tooltip title="This data is pulled from Google Trends data over the past 5 years. Indices are calculated as a ratio of the search for the song divided by total google searches in that country. Then the entire map is normalized to be a value between 0 and 100." placement="top">
+            <div style={{ position: "absolute", top: "-150px", left: "0px", transform: "translateX(-50%)", width: "250px",  textAlign: "center"}}>
+              <h1 style={{color: "white", fontSize: "24px", transition: "text-shadow 0.3s"}} onMouseEnter={(e) => e.target.style.textShadow = "0 0 10px white"} onMouseLeave={(e) => e.target.style.textShadow = "none"}>Popularity Index</h1>
+            </div>
+          </Tooltip>
+        </div> 
       <InfoBox isVisible = {boxVis} infoText = {boxText} position = {position}/>
     </>
   );
