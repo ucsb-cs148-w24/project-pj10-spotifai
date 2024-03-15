@@ -18,11 +18,18 @@ export default function Lyrics(props) {
     };
 
     const getWordCount = () => {
+        console.log(lyrics.length);
+        if (lyrics.length === 1) {
+            return 0;
+        }
         return lyrics.reduce((count, line) => count + line.split(' ').length, 0);
     };
 
     const getLyricDensity = () => {
         const wordCount = getWordCount();
+        if (wordCount === 0) {
+            return "-";
+        }
         const lyricDensity = wordCount / (duration / 1000); // Convert duration from milliseconds to seconds
         return lyricDensity.toFixed(2); // Display lyric density with 2 decimal places
     };
@@ -54,7 +61,10 @@ async function fetchLyrics(track_id){
     console.log(track_id);
     const response = await fetch(`https://spot-api.ethantest.workers.dev/lyrics/${track_id}`);
     const data = await response.json();
-    const lyrics = data.lyrics.lines.map(line => line.words);
-    return lyrics;
-
+    if (data.error) {
+        return [data.error];
+    } else {
+        const lyrics = data.lyrics.lines.map(line => line.words);
+        return lyrics;
+    }
 }
