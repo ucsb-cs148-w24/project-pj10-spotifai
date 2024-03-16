@@ -112,9 +112,11 @@ export default function Body({ headerbackground }) {
                 api_key={"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"}
               />
             </div>
-            <div >
-              <Lyrics track_id={currentPlaying.id ?? "No song selected"} duration={currentPlaying.duration ?? "No song selected"} />
-            </div>
+            {currentPlaying && (
+              <div>
+                <Lyrics track_id={currentPlaying.id ?? "No song selected"} duration={currentPlaying.duration ?? "No song selected"} />
+              </div>
+            )}
             <div className="dem-map">
               <WorldMapChart query = {currQuery} />
             </div>
