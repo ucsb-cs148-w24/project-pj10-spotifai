@@ -70,7 +70,6 @@ export default function GenerateWaveform() {
             if (response.ok) {
                 const blob = await response.blob();
                 const blobURL = window.URL.createObjectURL(blob);
-                console.log(blobURL)
                 const songName = currentPlaying ? currentPlaying.name.replace(/\s+/g, '_') : 'audio';
                 alert(`${songName} downloaded successfully!`);
                 setMp3FileName(songName);
