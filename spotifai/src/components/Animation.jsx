@@ -58,9 +58,8 @@ export default function GenerateAudioVisualizer() {
         const youtubeURL = await fetchYoutubeURL(query, key);
 
         try {
-            // const url = `https://thunder-bookmarks-showcase-wheat.trycloudflare.com/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare
-            // const url = `http://0.0.0.0:4000/download?youtubeURL=9V6u2svCm6E`
-            const url = `http://128.111.30.218:6438/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // CSIL
+            const url = `https://prepaid-fellowship-cashiers-years.trycloudflare.com/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare
+            // const url = `http://0.0.0.0:4000/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Local Host
 
             const response = await fetch(url, {
                 method: 'GET',
@@ -144,7 +143,12 @@ export default function GenerateAudioVisualizer() {
                 if (icosahedron.current) {
                     analyser.current.getByteFrequencyData(dataArray.current);
                     const average = dataArray.current.reduce((acc, val) => acc + val, 0) / dataArray.current.length;
-                    icosahedron.current.scale.set(2 + average / 10, 2 + average / 20, 2 + average / 10);
+                
+                    // calculate scale factor to make the icosahedron a perfect sphere
+                    const scaleFactor = 2 + average / 20; // Adjust this value as needed
+                
+                    // set scale to make the icosahedron a perfect sphere
+                    icosahedron.current.scale.set(scaleFactor, scaleFactor, scaleFactor);
                     
                     icosahedron.current.rotation.x += 0.01;
                     icosahedron.current.rotation.y += 0.02;

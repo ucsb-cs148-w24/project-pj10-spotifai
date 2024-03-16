@@ -54,10 +54,8 @@ export default function GenerateWaveform() {
         console.log(`YouTube URL: https://www.youtube.com/watch?v=${youtubeURL}`);
 
         try {
-            const url = `http://128.111.30.218:6438/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // CSIL
             // const url = `http://0.0.0.0:4000/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Local Host
-            // const url = `http://0.0.0.0:4000/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare (changes with each generation)
-            // const url = `http://0.0.0.0:4000/download?youtubeURL=9V6u2svCm6E`
+            const url = `https://prepaid-fellowship-cashiers-years.trycloudflare.com/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare
             console.log(url);
 
             const response = await fetch(url, {
@@ -89,8 +87,14 @@ export default function GenerateWaveform() {
         if (showPlayer && mp3BlobURL) {
             const wavesurfer = WaveSurfer.create({
                 container: waveformRef.current,
-                waveColor: 'rgb(29, 185, 84)',
-                progressColor: 'rgb(11, 71, 32)',
+                // waveColor: 'rgb(29, 185, 84)',
+                waveColor: [
+                    'rgb(191, 99, 145)',
+                    'rgb(140, 73, 121)',
+                    'rgb(75, 24, 82)'
+                ],
+                // progressColor: 'rgb(11, 71, 32)',
+                progressColor: 'rgb(18, 110, 50)',
                 responsive: true,
                 barWidth: 2,
                 barGap: 1,
