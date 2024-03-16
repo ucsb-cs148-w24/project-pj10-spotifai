@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import CurrentTrack from "./CurrTrack";
-// import Kaleidoscope from "./beat_visualizer/Kaleidoscope.js";
-import GenerateAudioVisualizer from "./audiovisualizer/YTmp3/GenerateAudioVisualizer";
+import GenerateWaveform from "./Waveform";
 import PlayerControls from "./PlayerControls";
 import Volume from "./Volume";
+import GenerateAnimation from "./Animation";
 
 export default function Footer() {
   return (
     <Container>
-      <GenerateAudioVisualizer />
+      <GenerateWaveform />
+      <GenerateAnimation />
       <CurrentTrack />
       <PlayerControls />
       <Volume />
