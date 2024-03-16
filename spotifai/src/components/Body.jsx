@@ -57,7 +57,8 @@ export default function Body({ headerbackground }) {
     track_number
   ) => {
     setQuery(name + " " + artists[0]);
-    const duration = currentPlaying ? currentPlaying.duration : null; // Assume duration is stored directly in track object
+    
+    const duration = currentPlaying ? currentPlaying.duration : null; // Assume duration is stored directly in track object 
     const response = await axios.put(
       `https://api.spotify.com/v1/me/player/play`,
       {
