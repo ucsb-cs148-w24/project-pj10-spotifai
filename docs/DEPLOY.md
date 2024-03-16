@@ -16,4 +16,4 @@
 3. Put the OpenAI API key and the Spotify client ID into the required sections (Login.jsx and PlaylistCover.jsx)
 4. Secure the API key and client ID if you deem it necessary.
 5. In the terminal, "cd" into the spotifai folder and run "npm run build", followed by "npm start"
-6. Use the app.
+6. Use SpotifAI!
