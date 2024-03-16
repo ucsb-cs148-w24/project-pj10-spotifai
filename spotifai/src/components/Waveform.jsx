@@ -89,12 +89,10 @@ export default function GenerateWaveform() {
                 container: waveformRef.current,
                 // waveColor: 'rgb(29, 185, 84)',
                 waveColor: [
-                    'rgb(191, 99, 145)',
-                    'rgb(140, 73, 121)',
-                    'rgb(75, 24, 82)'
+                    'rgb(29, 185, 84)',
+                    'rgb(136, 37, 194)'
                 ],
-                // progressColor: 'rgb(11, 71, 32)',
-                progressColor: 'rgb(18, 110, 50)',
+                progressColor: 'rgb(94, 50, 120)',
                 responsive: true,
                 barWidth: 2,
                 barGap: 1,
