@@ -1,5 +1,5 @@
 # SpotifAI: Spotify, but better 🎵✨
-SpotifAI is an advanced dashboard application designed to revolutionize your music journey. With innovative features tailored to enhance user engagement, it offers a unique blend of functionality and personalization.
+SpotifAI is a feature-rich dashboard that empowers users to interact with their music in innovative and immersive ways. Elevate your music experience with SpotifAI today!
 
 # Key Features:
 ## Generate AI Playlist Cover
@@ -19,8 +19,6 @@ See who's listening to your favorite songs and where with this interactive d3.js
 
 ## Lyric Analysis
 Gain insight into your current song's lyrics with this convenient pop-up.
-
-Tl;dr - SpotifAI offers a feature-rich environment that transcends traditional dashboards, empowering users to interact with their music in innovative and immersive ways. Elevate your music experience with SpotifAI today!
 
 # Team Info
 - Aaron Drumm, GitHub ID: SloggyYoggy
