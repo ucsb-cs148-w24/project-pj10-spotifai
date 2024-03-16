@@ -23,6 +23,7 @@ export default function CurrTrack() {
           name: response.data.item.name,
           artists: response.data.item.artists.map((artist) => artist.name),
           image: response.data.item.album.images[2].url,
+          duration: response.data.item.duration_ms,
         };
         dispatch({ type: reducerCases.SET_PLAYING, currentPlaying });
       } else {

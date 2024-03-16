@@ -21,6 +21,7 @@ export default function Login() {
     };
     return <Container>
         <img src="" alt="" />
+        <p style={{ color: 'white' }}>You must have your Spotify app open with your registered account before you login!</p>
         <StyledButton onClick={handleClick}>Connect Spotify</StyledButton>
     </Container>
 }
