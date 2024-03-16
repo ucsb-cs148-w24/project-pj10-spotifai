@@ -1,7 +1,26 @@
 # SpotifAI: Spotify, but better 🎵✨
-This dashboard app is a feature-rich platform designed to elevate the music experience. It incorporates an innovative "Generate AI Playlist Cover" button that leverages song characteristics to create personalized covers using advanced DALL-E technology. The app goes beyond traditional dashboards by offering customization options, including personalized color schemes, and a "Find on YouTube" feature for convenient video searches related to selected songs. The pop-up sidebar reveals demographic insights into listeners' locations and includes a beat visualizer with full-screen capabilities, synchronized animations based on song tempo, and lyric analysis or genre graphics tailored to lyrical or non-lyrical songs.
+SpotifAI is an advanced dashboard application designed to revolutionize your music journey. With innovative features tailored to enhance user engagement, it offers a unique blend of functionality and personalization.
 
-TLDR: SpotifAI is an innovative dashboard app that enhances the music experience with personalized playlist covers, customizable features, YouTube MV integration, demographic insights, and a beat visualizer.
+# Key Features:
+## Generate AI Playlist Cover
+SpotifAI uses the DALL-E API to generate personalized playlist covers based on your playlist metadata (genres, artists, mood, etc.).
+
+## Waveform Visualizer
+View your song's audio waveform, change its speed, and download it as an MP3 file for offline enjoyment.
+
+## Song Animator
+Load an immersive and interactive Three.js 3D animation of your current song.
+
+## Find on YouTube
+Simply click a button on SpotifAI's dashboard to be redirected to your song's corresponding music video on YouTube.
+
+## Popularity Index
+See who's listening to your favorite songs and where with this interactive d3.js world map.
+
+## Lyric Analysis
+Gain insight into your current song's lyrics with this convenient pop-up.
+
+Tl;dr - SpotifAI offers a feature-rich environment that transcends traditional dashboards, empowering users to interact with their music in innovative and immersive ways. Elevate your music experience with SpotifAI today!
 
 # Team Info
 - Aaron Drumm, GitHub ID: SloggyYoggy
@@ -22,9 +41,12 @@ TLDR: SpotifAI is an innovative dashboard app that enhances the music experience
 - d3.js
 - Three.js
 - React.js
-- Perlin.js
+- Wavesurfer.js
+- youtube-dl ([GitHub](https://github.com/ytdl-org/youtube-dl))
+- Flask
 ## Deployment
 - Vercel
+- Cloudflare
   
 # User Roles
 Spotify users seeking to elevate their engagement with their music.
@@ -39,14 +61,27 @@ Spotify users seeking to elevate their engagement with their music.
 # [Design Doc](https://github.com/ucsb-cs148-w24/project-pj10-spotifai/blob/main/docs/DESIGN.md)
 
 # Functionality
-1. Login with Spotify + accept terms and conditions.
-2. You will be redirected to a clone of your Spotify dashboard... but better! There are 4 main added functionalities on the **SpotifAI** dashboard: AI playlist cover generator, popularity stats, beat visualizer, and YouTube music video player.
-   - **AI Playlist Cover Generator:** Click 'Generate Playlist Cover' to get a custom image generated using a prompt based on the artists in your playlist!
-   - **Popularity Stats:** Mouse over an interactive map to see how many people from each country are listening to your current artist!
-   - **Beat Visualizer:** Click 'Generate Visualizer' to load a 3D animation that dances to your song!
-   - **YouTube MV Player:** Watch your song's music video without leaving the SpotifAI dashboard!
+1. Open Spotify app on your computer and play a song.
+2. Login with Spotify + accept terms and conditions.
+3. You will be redirected to a clone of your Spotify dashboard... but better! There are 5 main added functionalities on the **SpotifAI** dashboard: AI playlist cover generator, popularity stats, song animator, waveform visualizer, and YouTube music video player.
+   - **AI Playlist Cover Generator:** Click 'Generate Playlist Cover' to get a custom image generated using a prompt based on the artists in your playlist.
+   - **Song Animation:** Click 'Load Animation' to load a pop-up 3D animated icosahedron that dances to your song.
+   - **Waveform Visualizer:** Click 'Load Waveform' to load a pop-up waveform song player that lets you speed up, slow down, and download an MP3 of your song.
+   - **Popularity Stats:** Mouse over an interactive map to see how many people from each country are listening to your current artist.
+   - **Find on YouTube:** Click 'Open Song in YouTube' to be redirected to your song's corresponding music video.
+   - **Lyric Analysis:** Click 'Lyric Analysis' to view details about your song's lyrics.
   
-# Known Problems
+# Known Issues
+- Load Animation
+   - Takes a long time to load (0-5 minutes) with songs longer than 1 minute.
+   - May not load if Cloudflare Tunnel isn't running.
+- Load Waveform
+   - Takes a long time to load (0-5 minutes) with songs longer than 1 minute.
+   - May not load if Cloudflare Tunnel isn't running.
+- Non-premium Spotify users cannot select specific songs.
+- Current song display sometimes doesn't update when new song begins playing.
+- May get a 404 error if you launch SpotifAI with no song playing on your Spotify app.
+- Cannot search for songs.
 
 # Deployment
 
@@ -56,3 +91,5 @@ Spotify users seeking to elevate their engagement with their music.
 - User can sort playlists by danceability, energy, and valence.
 - AI song generation from an image or text. See: [Google's MusicLM](https://google-research.github.io/seanet/musiclm/examples/)
 - Instagram story creator.
+- Download song animation.
+- Add Spotify search functionality to allow users to search for songs and add to their playlists.
