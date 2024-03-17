@@ -84,7 +84,8 @@ export default function Body({ headerbackground }) {
           }
         );
       } else {
-        alert("Must have Spotify Premium to play tracks selectively. Try shuffle instead.");
+        // alert("Must have Spotify Premium to play tracks selectively. Try shuffle instead.");
+        alert("Error playing track. Check that the Spotify app is running and a song is selected. (NOTE: Cannot select specific song without Spotify Premium)");
       }
     } catch (error) {
       alert("Must have Spotify Premium to play tracks selectively. Try shuffle instead.");

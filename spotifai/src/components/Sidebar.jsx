@@ -23,7 +23,7 @@ export default function Sidebar() {
           </li>
         </ul>
       </div>
-      <div>Your Playlists</div>
+      <div>  Your Playlists</div>
       <Playlists />
     </Container>
   );
