@@ -54,16 +54,22 @@ const Container = styled.div`
   .track {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem; /* Adjust the gap as needed */
+    
     &__image {
+      /* Add styles for track image if needed */
     }
+
     &__info {
       display: flex;
       flex-direction: column;
-      gap: 0.3rem;
+      gap: 0.2rem; /* Adjust the gap between info elements */
+      
       &__track__name {
         color: white;
+        margin-bottom: 0.2rem; /* Adjust the margin as needed */
       }
+
       &__track__artists {
         color: #b3b3b3;
       }

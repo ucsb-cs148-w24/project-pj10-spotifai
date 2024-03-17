@@ -48,6 +48,7 @@ export default function Body({ headerbackground }) {
     };
     getInitialPlaylist();
   }, [token, dispatch, selectedPlaylistId]);
+
   const playTrack = async (
     id,
     name,
@@ -89,11 +90,13 @@ export default function Body({ headerbackground }) {
       dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: false });
     }
   };
+  
   const msToMinutesAndSeconds = (ms) => {
     var minutes = Math.floor(ms / 60000);
     var seconds = ((ms % 60000) / 1000).toFixed(0);
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   };
+
   return (
     <Container headerBackground={headerbackground}>
       {selectedPlaylist && (
