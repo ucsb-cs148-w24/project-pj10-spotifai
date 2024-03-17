@@ -1,6 +1,6 @@
 export default function convertCountryToCode(countryName) {
     for (let i = 0; i < countryCodes.length; i++) {
-        if (countryCodes[i].name == countryName) {
+        if (countryCodes[i].name === countryName) {
             return countryCodes[i].code;
         }
     }

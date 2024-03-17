@@ -5,7 +5,7 @@ export default function YoutubeLinkButton(props) {
     const query = props.query;
     const key = props.api_key;
     const handleClick = async () => {
-        if (query == ""){
+        if (query === ""){
             alert("No song selected");
             return;
         } 

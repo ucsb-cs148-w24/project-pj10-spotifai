@@ -12,7 +12,7 @@ import axios from "axios";
 import { reducerCases } from "../utils/Constants";
 
 export default function PlayerControls() {
-  const [{ token, playerState }, dispatch] = useStateProvider();
+  const [{ token, playerState, selectedPlaylist }, dispatch] = useStateProvider();
 
   const changeState = async () => {
     const state = playerState ? "pause" : "play";
@@ -64,9 +64,36 @@ export default function PlayerControls() {
       dispatch({ type: reducerCases.SET_PLAYING, currentPlaying: null });
     }
   };
+
+  const shufflePlaylist = async () => {
+    if (!selectedPlaylist || !selectedPlaylist.id) {
+      alert("Error: Invalid playlist or no playlist selected");
+      return;
+    }
+  
+    try {
+      await axios.put(
+        `https://api.spotify.com/v1/me/player/play`,
+        {
+          context_uri: `spotify:playlist:${selectedPlaylist.id}`,
+          offset: { position: 0 },
+          shuffle: true,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Error: Failed to shuffle playlist. Please try again.", error);
+    }
+  };
+
   return (
     <Container>
-      <div className="shuffle">
+      <div className="shuffle" onClick={shufflePlaylist}>
         <BsShuffle />
       </div>
       <div className="previous">

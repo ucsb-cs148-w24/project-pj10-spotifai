@@ -43,7 +43,7 @@ export default function Body({ headerbackground }) {
           track_number: track.track_number,
         })),
       };
-      console.log(response.data.tracks.items[0].track.id);
+      // console.log(response.data.tracks.items[0].track.id);
       dispatch({ type: reducerCases.SET_PLAYLIST, selectedPlaylist });
     };
     getInitialPlaylist();
@@ -57,37 +57,40 @@ export default function Body({ headerbackground }) {
     context_uri,
     track_number
   ) => {
-    setQuery(name + " " + artists[0]);
-    const track = selectedPlaylist.tracks.find(track => track.id === id);
-    const duration = track ? track.duration : null; // Assume duration is stored directly in track object
-    const response = await axios.put(
-      `https://api.spotify.com/v1/me/player/play`,
-      {
-        context_uri,
-        offset: {
-          position: track_number - 1,
-        },
-        position_ms: 0,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
+    if (!token) {
+      alert("Error: User not authenticated. Please log in to Spotify.");
+      return;
+    }
+  
+    try {
+      const track = selectedPlaylist.tracks.find((track) => track.id === id);
+      if (!track) {
+        throw new Error("Track not found in the selected playlist.");
       }
-    );
-    if (response.status === 204) {
-      const currentPlaying = {
-        id,
-        name,
-        artists,
-        image,
-        duration,
-      };
-      dispatch({ type: reducerCases.SET_PLAYING, currentPlaying });
-      dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
-    } else {
-      dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: false });
+  
+      if (track.duration > 0) {
+        // Check if the user has Spotify Premium
+        // Assuming the error for non-Premium user trying to play a track is a 403 Forbidden
+        await axios.put(
+          `https://api.spotify.com/v1/me/player/play`,
+          {
+            uris: [context_uri],
+            offset: { position: track_number },
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + token,
+            },
+          }
+        );
+      } else {
+        // alert("Must have Spotify Premium to play tracks selectively. Try shuffle instead.");
+        alert("Error playing track. Check that the Spotify app is running and a song is selected. (NOTE: Cannot select specific song without Spotify Premium)");
+      }
+    } catch (error) {
+      alert("Must have Spotify Premium to play tracks selectively. Try shuffle instead.");
+      console.error("Error playing track:", error);
     }
   };
   
@@ -117,7 +120,10 @@ export default function Body({ headerbackground }) {
               />
             </div>
             <div >
-              <Lyrics track_id={currentPlaying.id ?? "No song selected"} duration={currentPlaying.duration ?? "No song selected"} />
+              <Lyrics 
+                track_id={(currentPlaying ? currentPlaying.id : "No song selected")} 
+                duration={(currentPlaying ? currentPlaying.duration : "No song selected")} 
+              />
             </div>
             <div className="dem-map">
               <WorldMapChart query = {currQuery} />
