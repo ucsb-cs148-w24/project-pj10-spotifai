@@ -116,10 +116,10 @@ export default function Body({ headerbackground }) {
               />
             </div>
             <div >
-            <Lyrics 
-              track_id={(currentPlaying ? currentPlaying.id : "No song selected")} 
-              duration={(currentPlaying ? currentPlaying.duration : "No song selected")} 
-            />
+              <Lyrics 
+                track_id={(currentPlaying ? currentPlaying.id : "No song selected")} 
+                duration={(currentPlaying ? currentPlaying.duration : "No song selected")} 
+              />
             </div>
             <div className="dem-map">
               <WorldMapChart query = {currQuery} />
