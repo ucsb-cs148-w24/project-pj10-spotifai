@@ -58,7 +58,7 @@ export default function GenerateAudioVisualizer() {
         const youtubeURL = await fetchYoutubeURL(query, key);
 
         try {
-            const url = `https://error-death-cingular-finest.trycloudflare.com/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare
+            const url = `https://deleted-spiritual-scsi-larger.trycloudflare.com/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare
             // const url = `http://0.0.0.0:4000/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Local Host
 
             const response = await fetch(url, {
