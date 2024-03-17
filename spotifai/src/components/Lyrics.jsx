@@ -18,7 +18,7 @@ export default function Lyrics(props) {
     };
 
     const getWordCount = () => {
-        console.log(lyrics.length);
+        // console.log(lyrics.length);
         if (lyrics.length === 1) {
             return 0;
         }
@@ -60,7 +60,7 @@ export default function Lyrics(props) {
 }
 
 async function fetchLyrics(track_id){
-    console.log(track_id);
+    // console.log(track_id);
     const response = await fetch(`https://spot-api.ethantest.workers.dev/lyrics/${track_id}`);
     const data = await response.json();
     if (data.error) {

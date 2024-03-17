@@ -49,11 +49,11 @@ const WorldMapChart = (props) => {
       fetchPlus(`https://smmzhu.pythonanywhere.com/?query=${props.query}`, 3)
       // .then(response => response.json()),
     ]).then(function([topo, populationData]) {
-      console.log(populationData);
+      // console.log(populationData);
       let data = new Map(); 
       let parsedCSV = populationData[props.query];
       Object.entries(parsedCSV).forEach(([key, value]) => {
-        if (!(convertCountryToCode(key) == "Unknown")) {
+        if (!(convertCountryToCode(key) === "Unknown")) {
           data.set(convertCountryToCode(key), value);
         }
       });

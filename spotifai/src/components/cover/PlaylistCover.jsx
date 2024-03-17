@@ -46,14 +46,14 @@ const PlaylistCoverGenerator = () => {
 
   
     for (let track of selectedTracks) {
-      console.log("track:", track);
-      console.log("duration:", track.duration);
+      // console.log("track:", track);
+      // console.log("duration:", track.duration);
       let artist = track.artists[0]; 
       artistsSet.add(artist);
     }
     
     let artistsArray = Array.from(artistsSet);
-    console.log("Collected Artists:", artistsArray.join(", "));
+    // console.log("Collected Artists:", artistsArray.join(", "));
 
     let artistsString = artistsArray.join(", ");
     let prompt = `Create a basic and simple and soft art that captures the genres of these artists: ${artistsString}, with the use of only a few colors. Do not include music notes or any musical symbols and not too many details.`;
@@ -71,7 +71,7 @@ const PlaylistCoverGenerator = () => {
         size: "1024x1024",
       });
       const image_url = response.data[0].url;
-      console.log(image_url);
+      // console.log(image_url);
       setCoverImage(image_url);
     } catch (error) {
       console.error("Error generating cover:", error);
