@@ -73,9 +73,11 @@ Spotify users seeking to elevate their engagement with their music.
 - Load Animation
    - Takes a long time to load (0-5 minutes) with songs longer than 1 minute.
    - May not load if Cloudflare Tunnel isn't running.
+   - May crash Cloudflare Tunnel if user attempts to download song longer than 5 minutes.
 - Load Waveform
    - Takes a long time to load (0-5 minutes) with songs longer than 1 minute.
    - May not load if Cloudflare Tunnel isn't running.
+   - May crash Cloudflare Tunnel if user attempts to download song longer than 5 minutes.
 - Non-premium Spotify users cannot select specific songs.
 - Current song display sometimes doesn't update when new song begins playing.
 - May get a 404 error if you launch SpotifAI with no song playing on your Spotify app.

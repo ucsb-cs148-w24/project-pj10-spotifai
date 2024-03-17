@@ -1,37 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import CurrentTrack from "./CurrTrack";
-// import BeatVisualizer from "./beat_visualizer/BeatVisualizer.js";
-import Kaleidoscope from "./beat_visualizer/Kaleidoscope.js";
+import GenerateWaveform from "./Waveform";
 import PlayerControls from "./PlayerControls";
 import Volume from "./Volume";
 import YoutubeLinkButton from "./YoutubeLinkButton.jsx";
+import GenerateAnimation from "./Animation";
 
 export default function Footer() {
   return (
     <Container>
-      {/* <BeatVisualizer /> */}
-      <ContentContainer>
-        <CurrentTrack />
-        <PlayerControls />
-        <Volume />
-        <KaleidoscopeWrapper>
-          <Kaleidoscope />
-        </KaleidoscopeWrapper>
-      </ContentContainer>
+      <GenerateWaveform />
+      <GenerateAnimation />
+      <CurrentTrack />
+      <PlayerControls />
+      <Volume />
     </Container>
   );
 }
 
 const Container = styled.div`
-  height: 100%;
+  height: auto; /* Adjust the height as needed */
   width: 100%;
   background-color: #181818;
   border-top: 1px solid #282828;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
+  justify-content: space-around;
+  align-items: center; /* Align items vertically */
+  overflow: hidden; /* Ensure child elements do not overflow */
 `;
 
 const ContentContainer = styled.div`
