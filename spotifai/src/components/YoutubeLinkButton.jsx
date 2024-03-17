@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+
 export default function YoutubeLinkButton(props) {
     const query = props.query;
     const key = props.api_key;
@@ -11,7 +14,8 @@ export default function YoutubeLinkButton(props) {
     };
     return (
         <button onClick={handleClick} style={{ backgroundColor: 'rgb(60, 97, 60)', color: 'white', fontSize: '16px', padding: '10px 20px', borderRadius: '20px', border: 'none', cursor: 'pointer' }}>
-            Open Song in Youtube
+            Open Song in Youtube   
+            <FontAwesomeIcon icon={faYoutube} style={{ marginLeft: '5px' }}/>
         </button>
     );
 }

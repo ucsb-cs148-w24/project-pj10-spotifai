@@ -8,8 +8,8 @@ attendance:
  - aaron
 
 what are we working on:
- - richard + aaron: find a way to connect the app to spotify without the developer api key
- - grace: working on the beat visualizer — look into beatmap and see if theres a way to find how to sync the visualizer
- - kyle: finishing dalle — figure out the best way to give good prompts for dalle to generate covers
- - lindsey + ethan: get and show the lyrics on the lyric showing component (that needs to be created), and figure out the roadmap for a lyric analysis component
- - sam: still hunting for demographic data, will look into webscraping?
+ - richard + aaron: figuring out deployment and looking into getting it to work with normal Spotify (not premium)
+ - grace: working on the beat visualizer — working with downloaded songs for more advanced visualization and synicing
+ - kyle: finishing dalle — getting more information from the playlists for more accurate prompts and pictures
+ - lindsey + ethan: get and show the lyrics on the lyric showing component and syncing it, polishing up UI and UX for deployment
+ - sam: looking into serpApi for the Google Trends data 

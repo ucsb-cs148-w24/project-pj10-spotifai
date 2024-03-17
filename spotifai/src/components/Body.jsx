@@ -7,9 +7,10 @@ import { reducerCases } from "../utils/Constants";
 import PlaylistCoverGenerator from "./cover/PlaylistCover.jsx";
 import WorldMapChart from "./DemographicMap.jsx";
 import YoutubeLinkButton from "./YoutubeLinkButton.jsx";
+import Lyrics from "./Lyrics.jsx";
 
 export default function Body({ headerbackground }) {
-  const [{ token, selectedPlaylist, selectedPlaylistId }, dispatch] =
+  const [{ token, selectedPlaylist, selectedPlaylistId, currentPlaying}, dispatch] =
     useStateProvider();
   const [currQuery, setQuery] = useState("");
 
@@ -57,6 +58,8 @@ export default function Body({ headerbackground }) {
     track_number
   ) => {
     setQuery(name + " " + artists[0]);
+    const track = selectedPlaylist.tracks.find(track => track.id === id);
+    const duration = track ? track.duration : null; // Assume duration is stored directly in track object
     const response = await axios.put(
       `https://api.spotify.com/v1/me/player/play`,
       {
@@ -79,11 +82,12 @@ export default function Body({ headerbackground }) {
         name,
         artists,
         image,
+        duration,
       };
       dispatch({ type: reducerCases.SET_PLAYING, currentPlaying });
       dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
     } else {
-      dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
+      dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: false });
     }
   };
   
@@ -112,8 +116,11 @@ export default function Body({ headerbackground }) {
                 api_key={"AIzaSyC7vMbbCmg8vx1ifDx_QFqmggU4OPJ1VYA"}
               />
             </div>
+            <div >
+              <Lyrics track_id={currentPlaying.id ?? "No song selected"} duration={currentPlaying.duration ?? "No song selected"} />
+            </div>
             <div className="dem-map">
-              <WorldMapChart />
+              <WorldMapChart query = {currQuery} />
             </div>
           </div>
           <div className="list">
@@ -172,11 +179,11 @@ export default function Body({ headerbackground }) {
                         </div>
                         <div className="info">
                           <span className="name">{name}</span>
-                          <span>{artists}</span>
+                          <span>{Array.isArray(artists) ? artists.join(', ') : artists}</span>
                         </div>
                       </div>
                       <div className="col">
-                        <span>{album}</span>
+                        <span style={{ marginRight: '10px' }}>{album} </span>
                       </div>
                       <div className="col">
                         <span>{msToMinutesAndSeconds(duration)}</span>
@@ -213,20 +220,22 @@ const Container = styled.div`
       align-self: center;
       margin-top: 10px;
       margin-left: 250px;
+      padding-right: 10rem;
     }
   }
   .list {
     .header-row {
       display: grid;
+      position: sticky;
       grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
       margin: 1rem 0 0 0;
       color: #dddcdc;
-      position: sticky;
-      top: 15vh;
+      top: ${({ headerbackground }) =>
+        headerbackground ? "15vh" : "0"};
       padding: 1rem 3rem;
       transition: 0.3s ease-in-out;
       background-color: ${({ headerbackground }) =>
-        headerbackground ? "#000000dc" : "none"};
+        headerbackground ? "#000000dc" : "black"};
     }
     .tracks {
       margin: 0 2rem;

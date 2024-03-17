@@ -1,4 +1,9 @@
-Name: Grace Feng
-Year: 2nd
-Major: CS
-Ideas: Data visualization, popular app APIs, AI/ML, prompt generation(?)
+Name: Grace Feng  
+
+Year: 2nd  
+
+Major: Computer Science + Art Minor
+
+Interests: Music, VR/AR, animation
+
+Ideas: Data visualization, Spotify API, DALL-E integration, prompt generation
