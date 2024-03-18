@@ -1,4 +1,4 @@
-# SpotifAI: Spotify, but better 🎵✨
+# [SpotifAI](https://project-pj10-spotifai.vercel.app/): Spotify, but better 🎵✨
 SpotifAI is a feature-rich dashboard that empowers users to interact with their music in innovative and immersive ways. Elevate your music experience with SpotifAI today!
 
 # Key Features:
@@ -83,9 +83,9 @@ Spotify users seeking to elevate their engagement with their music.
 - May get a 404 error if you launch SpotifAI with no song playing on your Spotify app.
 - Cannot search for songs.
 
-# Deployment
+# [Deployment](https://project-pj10-spotifai.vercel.app/)
 
-# Final Presentation Video Link
+# [Final Presentation Video Link](https://drive.google.com/file/d/1jSt1cNjZ6dYIKPOrcK0Fg2ReGQDOMEEw/view?usp=sharing)
 
 # Future Work
 - User can sort playlists by danceability, energy, and valence.
