@@ -1,8 +1,6 @@
 # SpotifAI: Spotify, but better 🎵✨
 SpotifAI is a feature-rich dashboard that empowers users to interact with their music in innovative and immersive ways. Elevate your music experience with SpotifAI today!
 
-[**SpotifAI**](https://project-pj10-spotifai.vercel.app/)
-
 # Key Features:
 ## Generate AI Playlist Cover
 SpotifAI uses the DALL-E API to generate personalized playlist covers based on your playlist metadata (genres, artists, mood, etc.).
@@ -85,7 +83,8 @@ Spotify users seeking to elevate their engagement with their music.
 - May get a 404 error if you launch SpotifAI with no song playing on your Spotify app.
 - Cannot search for songs.
 
-# [Deployment](https://project-pj10-spotifai.vercel.app/)
+# Deployment
+[https://project-pj10-spotifai.vercel.app/](https://project-pj10-spotifai.vercel.app/)
 
 # [Final Presentation Video Link](https://drive.google.com/file/d/1jSt1cNjZ6dYIKPOrcK0Fg2ReGQDOMEEw/view?usp=sharing)
 
