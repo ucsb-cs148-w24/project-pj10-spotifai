@@ -86,7 +86,8 @@ Spotify users seeking to elevate their engagement with their music.
 # Deployment
 [https://project-pj10-spotifai.vercel.app/](https://project-pj10-spotifai.vercel.app/)
 
-# [Final Presentation Video Link](https://drive.google.com/file/d/1jSt1cNjZ6dYIKPOrcK0Fg2ReGQDOMEEw/view?usp=sharing)
+# Final Presentation Video Link
+[https://drive.google.com/file/d/1jSt1cNjZ6dYIKPOrcK0Fg2ReGQDOMEEw/view?usp=sharing](https://drive.google.com/file/d/1jSt1cNjZ6dYIKPOrcK0Fg2ReGQDOMEEw/view?usp=sharing)
 
 # Future Work
 - User can sort playlists by danceability, energy, and valence.
