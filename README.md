@@ -40,7 +40,7 @@ Gain insight into your current song's lyrics with this convenient pop-up.
 - Three.js
 - React.js
 - Wavesurfer.js
-- youtube-dl ([GitHub](https://github.com/ytdl-org/youtube-dl))
+- [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 - Flask
 ## Deployment
 - Vercel
