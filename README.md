@@ -1,5 +1,7 @@
-# [SpotifAI](https://project-pj10-spotifai.vercel.app/): Spotify, but better 🎵✨
+# SpotifAI: Spotify, but better 🎵✨
 SpotifAI is a feature-rich dashboard that empowers users to interact with their music in innovative and immersive ways. Elevate your music experience with SpotifAI today!
+
+[Link to SpotifAI](https://project-pj10-spotifai.vercel.app/)
 
 # Key Features:
 ## Generate AI Playlist Cover
