@@ -145,13 +145,13 @@ export default function GenerateAudioVisualizer() {
                     const average = dataArray.current.reduce((acc, val) => acc + val, 0) / dataArray.current.length;
                 
                     // calculate scale factor to make the icosahedron a perfect sphere
-                    const scaleFactor = 2 + average / 20; // Adjust this value as needed
+                    const scaleFactor = 2 + average / 20;
                 
                     // set scale to make the icosahedron a perfect sphere
                     icosahedron.current.scale.set(scaleFactor, scaleFactor, scaleFactor);
                     
-                    icosahedron.current.rotation.x += 0.01;
-                    icosahedron.current.rotation.y += 0.02;
+                    icosahedron.current.rotation.x += 0.03;
+                    icosahedron.current.rotation.y += 0.05;
 
                     const hue = (Date.now() % 10000) / 10000;
                     const color = new THREE.Color().setHSL(hue, 1, 0.5);
