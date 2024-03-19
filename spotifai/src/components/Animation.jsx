@@ -95,9 +95,9 @@ export default function GenerateAudioVisualizer() {
             const renderPass = new RenderPass(scene, camera.current);
             composer.addPass(renderPass);
             const bloomPass = new UnrealBloomPass();
-            bloomPass.strength = 1.5;
-            bloomPass.radius = 0.2;
-            bloomPass.threshold = 0.4;
+            bloomPass.strength = 2;
+            bloomPass.radius = 0.4;
+            bloomPass.threshold = 0.2;
             composer.addPass(bloomPass);
     
             const container = containerRef.current;
