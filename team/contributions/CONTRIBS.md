@@ -19,11 +19,11 @@
 - Worked on playlist cover generation such that users can generate and download the generated image
 - Experimented with prompting DALLE to improve the accuracy of the generated playlist covers
 ### Samuel Zhu
-- Created d3 component and data input, also integrated pytrends into custom flask server to bypass cord
+- Created d3 component and data input, also integrated pytrends into custom flask server to bypass CORS
 - Created open in youtube link button with youtube API integration
 ### Kyle Uwaine
 - Integrated Spotify API and OpenAI API to implement the AI playlist cover generation
 - Worked on prompt engineering to improve the cover generation
 ### Ethan Solomon
-- Working on finding a way to get lyrics from song using lyrics searcher API  
+- Deployed Lyrics API on Cloudflare, and created lyrics popup component to display lyrics, word count, word density  
 - Helped planning UI / wireframe  
