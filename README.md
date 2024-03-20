@@ -32,6 +32,7 @@ Gain insight into your current song's lyrics with this convenient pop-up.
 # Tech Stack
 ## APIs
 - Spotify API
+- Spot Lyrics API
 - YouTube API
 - OpenAI API
 - Google Trends API
