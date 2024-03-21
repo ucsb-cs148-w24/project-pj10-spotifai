@@ -17,7 +17,8 @@
   - Load MP3 from previous functionality --> Generate 3D icosahedron that listens to MP3 and moves to audio features (frequency, amplitude).
 ### Lindsey Wen
 - Worked on playlist cover generation such that users can generate and download the generated image
-- Experimented with prompting DALLE to improve the accuracy of the generated playlist covers
+- Experimented with prompting DALLE by fetching artists from Spotify API to improve the generated playlist covers
+- Helped Ethan with lyrics feature
 ### Samuel Zhu
 - Created d3 component and data input, also integrated pytrends into custom flask server to bypass CORS
 - Created open in youtube link button with youtube API integration
