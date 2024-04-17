@@ -58,7 +58,7 @@ export default function GenerateAudioVisualizer() {
         const youtubeURL = await fetchYoutubeURL(query, key);
 
         try {
-            const url = `https://budapest-gazette-generators-massachusetts.trycloudflare.com/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare
+            const url = `https://else-patterns-angels-pictures.trycloudflare.com/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare
             // const url = `http://0.0.0.0:4000/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Local Host
 
             const response = await fetch(url, {

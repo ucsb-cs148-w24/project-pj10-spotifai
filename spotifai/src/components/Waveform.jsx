@@ -55,7 +55,7 @@ export default function GenerateWaveform() {
 
         try {
             // const url = `http://0.0.0.0:4000/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Local Host
-            const url = `https://budapest-gazette-generators-massachusetts.trycloudflare.com/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare
+            const url = `https://else-patterns-angels-pictures.trycloudflare.com/download?youtubeURL=${encodeURIComponent(youtubeURL)}`; // Cloudflare
             console.log(url);
 
             const response = await fetch(url, {
