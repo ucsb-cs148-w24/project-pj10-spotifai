@@ -26,14 +26,23 @@ See who's listening to your favorite songs and where with this interactive d3.js
 ## Lyric Analysis
 Gain insight into your current song's lyrics with this convenient pop-up.
 
-# Team Info
+# Team Info and Responsibilities
 - Aaron Drumm, GitHub ID: SloggyYoggy
+  - UI
 - Richard Fang, GitHub ID: richardfang888
+  - Spotify Authentication
 - Grace Feng, GitHub ID: gracefeng05
+  - Waveform Visualizer
+  - Song Animator
 - Ethan Solomon, GitHub ID: ethansolomon49
+  - Lyric Analysis
 - Kyle Uwaine, GitHub ID: kyleuwaine
+  - Generate AI Playlist Cover
 - Lindsey Wen, GitHub ID: lindseywn
+  - Generate AI Playlist Cover
 - Samuel Zhu, GitHub ID: smmzhu
+  - Find on YouTube
+  - Popularity Index
 
 # Tech Stack
 ## APIs
