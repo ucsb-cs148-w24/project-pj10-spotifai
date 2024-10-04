@@ -1,3 +1,9 @@
+# [Deployment Instructions](https://github.com/ucsb-cs148-w24/project-pj10-spotifai/blob/main/docs/DEPLOY.md)
+
+# [User Manual](https://docs.google.com/document/d/1RIe-7-xjVdvzRljdwkUMgwIwAzbeGLFhCxFeNnLGhEA/edit#heading=h.y1pe8dqfoykk)
+
+# [Design Doc](https://docs.google.com/presentation/d/1DMntNB_ZepUWKS3he0hVkkVhehXqq2pi3dzvblq9foc/edit)
+
 # SpotifAI: Spotify, but better 🎵✨
 SpotifAI is a feature-rich dashboard that empowers users to interact with their music in innovative and immersive ways. Elevate your music experience with SpotifAI today!
 
@@ -52,12 +58,6 @@ Spotify users seeking to elevate their engagement with their music.
 
 # Roles and Permissions
 **SpotifAI** is open to everyone! There is no way to put inflammatory content/hack users/etc. via our site format.
-  
-# [Deployment Instructions](https://github.com/ucsb-cs148-w24/project-pj10-spotifai/blob/main/docs/DEPLOY.md)
-
-# [User Manual](https://github.com/ucsb-cs148-w24/project-pj10-spotifai/blob/main/docs/MANUAL.md)
-
-# [Design Doc](https://github.com/ucsb-cs148-w24/project-pj10-spotifai/blob/main/docs/DESIGN.md)
 
 # Functionality
 1. Open Spotify app on your computer and play a song.
