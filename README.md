@@ -4,6 +4,8 @@
 
 # [Design Doc](https://docs.google.com/presentation/d/1DMntNB_ZepUWKS3he0hVkkVhehXqq2pi3dzvblq9foc/edit)
 
+# [Demo Video](https://drive.google.com/file/d/1jSt1cNjZ6dYIKPOrcK0Fg2ReGQDOMEEw/view?usp=sharing)
+
 # SpotifAI: Spotify, but better 🎵✨
 SpotifAI is a feature-rich dashboard that empowers users to interact with their music in innovative and immersive ways. Elevate your music experience with SpotifAI today!
 
