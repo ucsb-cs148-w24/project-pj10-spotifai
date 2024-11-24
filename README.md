@@ -36,6 +36,7 @@ Gain insight into your current song's lyrics with this convenient pop-up.
 - Grace Feng, GitHub ID: gracefeng05
   - Waveform Visualizer
   - Song Animator
+  - Song mp3 Downloader
 - Ethan Solomon, GitHub ID: ethansolomon49
   - Lyric Analysis
 - Kyle Uwaine, GitHub ID: kyleuwaine
